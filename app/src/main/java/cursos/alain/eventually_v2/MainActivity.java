@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Recuperar(View view){
 
-        Intent RecuperarContra = new Intent(this, MainActivity.class);
+        Intent RecuperarContra = new Intent(this, contranueva.class);
         startActivity(RecuperarContra);
     }
 
