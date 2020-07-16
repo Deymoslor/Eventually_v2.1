@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
+
+    //listener  Registro
     public void Registro(View view){
 
         Intent siguiente = new Intent(this, registro_Usuarios.class);
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Ingresar(View view){
 
-        Intent Ingresar_principal = new Intent(this, MainActivity.class);
+        Intent Ingresar_principal = new Intent(this, Drawer_principal.class);
         startActivity(Ingresar_principal);
 
     }

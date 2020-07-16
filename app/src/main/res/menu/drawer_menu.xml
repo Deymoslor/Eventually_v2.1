@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Principal">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:icon="@drawable/ic_home"
+                android:title="home">
+            </item>
+            <item
+                android:id="@+id/grupos"
+                android:icon="@drawable/ic_group"
+                android:title="grupos">
+            </item>
+        </menu>
+
+    </item>
+    <item
+        android:title="Secuandario">
+        <menu>
+            <item
+                android:id="@+id/home2"
+                android:icon="@drawable/ic_home"
+                android:title="home">
+            </item>
+            <item
+                android:id="@+id/grupos2"
+                android:icon="@drawable/ic_group"
+                android:title="grupos">
+            </item>
+        </menu>
+
+    </item>
+
+</menu>
