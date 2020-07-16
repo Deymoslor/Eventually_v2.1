@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Eventually</string>
+    <string name="Eventually">LOGO EVENTUALLY</string>
+    <string name="Login">Login</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="Correo">Correo Electronico</string>
+    <string name="Ingresar">Ingresar</string>
+    <string name="Olvidacion">¿Olvidaste la contraseña?</string>
+    <string name="Registrarse">¿No tienes cuenta?</string>
+    <string name="Usuario">Nombre de Usuario</string>
+    <string name="Nombre">Nombre</string>
+    <string name="CContraseña">Confirmar Contraseña</string>
+    <string name="Email">E-Mail</string>
+    <string name="Registro">REGISTRO</string>
+    <string name="CRegistro">REGISTRARSE</string>
+    <string name="Cancelar">CANCELAR</string>
+    <string name="Recuperar">Recuperacion de contraseña</string>
+    <string name="RecuperarC">Pofavor introduce tu correo electronico: </string>
+    <string name="RecuperarE">Enviar</string>
+    <string name="title_activity_principal_v2">Activity_principalV2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
