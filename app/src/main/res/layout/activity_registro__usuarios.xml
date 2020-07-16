@@ -113,7 +113,7 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:backgroundTint="@color/colorBoton_Prueba1"
             android:text="@string/CRegistro"
             android:textColor="@color/colorAzul_Sutil" />
@@ -123,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:backgroundTint="@color/colorBoton_Prueba1"
             android:onClick="Login"
             android:text="@string/Cancelar"
