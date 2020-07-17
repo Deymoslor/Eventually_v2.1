@@ -27,11 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:layout_gravity="center"
-        android:gravity="right"
-        android:orientation="horizontal">
+
+        android:gravity="center"
+        android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txt_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -44,22 +45,22 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:ems="10"
             android:fontFamily="@font/amiko"
-            android:hint="@string/Nombre"
-            android:inputType="textPersonName"
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"
             android:textColor="@color/colorAzul_Sutil"
             android:textColorHint="@color/colorAzul_Sutil"
             android:textSize="20sp"
             android:textStyle="bold" />
-
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/txt_contra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -72,7 +73,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/txt_contra_c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -85,19 +86,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editText7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:fontFamily="@font/amiko"
-            android:hint="@string/Email"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/colorAzul_Sutil"
-            android:textColorHint="@color/colorAzul_Sutil"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+
 
     </LinearLayout>
 
@@ -110,7 +99,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_registrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
