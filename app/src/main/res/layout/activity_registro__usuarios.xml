@@ -27,14 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:layout_gravity="center"
-<<<<<<< Updated upstream
-        android:gravity="right"
-=======
         android:gravity="center"
->>>>>>> Stashed changes
         android:orientation="vertical">
 
         <EditText
+
             android:id="@+id/Txt_Usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,6 +44,7 @@
             android:textColorHint="@color/colorAzul_Sutil"
             android:textSize="20sp"
             android:textStyle="bold" />
+
 
         <EditText
             android:id="@+id/Txt_Email"
@@ -61,8 +59,9 @@
             android:textColorHint="@color/colorAzul_Sutil"
             android:textSize="20sp"
             android:textStyle="bold" />
-
+      
         <EditText
+                  
             android:id="@+id/Txt_Contra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,6 +75,7 @@
             android:textStyle="bold" />
 
         <EditText
+
             android:id="@+id/Txt_ContraC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,6 +102,7 @@
         android:orientation="vertical">
 
         <Button
+
             android:id="@+id/Btn_Registrarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
