@@ -14,7 +14,6 @@ public class registro_Usuarios extends AppCompatActivity {
         setContentView(R.layout.activity_registro__usuarios);
     }
     public void Login(View view){
-
         Intent Atras = new Intent(this, MainActivity.class);
         startActivity(Atras);
     }
