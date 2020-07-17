@@ -27,7 +27,22 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:fontFamily="@font/amiko"
+            android:hint="@string/Usuario"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorAzul_Sutil"
+            android:textColorHint="@color/colorAzul_Sutil"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText2"
