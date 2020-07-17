@@ -27,12 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:layout_gravity="center"
-
         android:gravity="center"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/txt_usuario"
+            android:id="@+id/Txt_Usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -47,7 +46,7 @@
 
 
         <EditText
-            android:id="@+id/txt_email"
+            android:id="@+id/Txt_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -60,7 +59,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/txt_contra"
+            android:id="@+id/Txt_Contra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -73,7 +72,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txt_contra_c"
+            android:id="@+id/Txt_Contra_c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -99,7 +98,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_registrar"
+            android:id="@+id/Btn_Registrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
