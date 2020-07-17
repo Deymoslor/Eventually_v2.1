@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/imagen_grupo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/logoxd_foreground">
+        </ImageView>
+        <TextView
+            android:id="@+id/nombre_grupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del grupo"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/imagen_grupo"
+            android:layout_toEndOf="@+id/imagen_grupo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp">
+        </TextView>
+        <TextView
+            android:id="@+id/intereses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="diferentes intereses"
+            android:textStyle="bold"
+            android:layout_below="@+id/nombre_grupo"
+            android:layout_toRightOf="@+id/imagen_grupo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp">
+        </TextView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
