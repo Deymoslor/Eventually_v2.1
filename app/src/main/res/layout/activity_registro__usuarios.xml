@@ -110,7 +110,6 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_weight="0"
             android:backgroundTint="@color/colorBoton_Prueba1"
             android:onClick="Login"
