@@ -7,7 +7,7 @@
     <string name="Ingresar">Ingresar</string>
     <string name="Olvidacion">¿Olvidaste la contraseña?</string>
     <string name="Registrarse">¿No tienes cuenta?</string>
-    <string name="Usuario">Nombre de Usuario</string>
+    <string name="Usuario">Apodo</string>
     <string name="Nombre">Nombre</string>
     <string name="CContraseña">Confirmar Contraseña</string>
     <string name="Email">E-Mail</string>
@@ -27,4 +27,5 @@
     <string name="close">close</string>
     <string name="main_fragment">Main Fragment</string>
     <string name="grupos_fragment">grupos fragment</string>
+
 </resources>
