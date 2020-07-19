@@ -17,17 +17,17 @@
 
     </item>
     <item
-        android:title="Secuandario">
+        android:title="Administrador">
         <menu>
             <item
-                android:id="@+id/home2"
+                android:id="@+id/Desarollo"
                 android:icon="@drawable/ic_home"
-                android:title="home">
+                android:title="Desarollo">
             </item>
             <item
-                android:id="@+id/grupos2"
+                android:id="@+id/registros"
                 android:icon="@drawable/ic_group"
-                android:title="grupos">
+                android:title="Registros">
             </item>
         </menu>
 

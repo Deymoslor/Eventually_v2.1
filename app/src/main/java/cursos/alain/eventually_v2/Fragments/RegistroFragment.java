@@ -13,14 +13,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 
 import cursos.alain.eventually_v2.R;
 
@@ -30,6 +37,7 @@ import cursos.alain.eventually_v2.R;
  * create an instance of this fragment.
  */
 public class RegistroFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -110,24 +118,31 @@ public class RegistroFragment extends Fragment implements Response.Listener<JSON
                 //inflater.inflate(R.layout.fragment_registro, container, false);
     }
 
+
     private void cargarWebService() { //Cuando se precione el botón hará todo lo que esté aquí adentro.
+
+
 
         progreso = new ProgressDialog(getContext()); //Creamos el dialogo.
         progreso.setMessage("Cargando. . ."); //Definimos el mensaje que tendrá.
         progreso.show(); //Mostramos el dialogo.
 
         //Enviamos todos los datos para que el WB los reciba.
-        String url = "http://192.168.56.1/Eventually_01/Registrar_Usuario.php?Id_Cliente&Nombre_Cliente="+TxT_Usuario.getText().toString()+
-                "E_Mail="+Txt_Email.getText().toString()+
+        String url = "http://192.168.1.69/Eventually_01/Registrar_Usuario.php?Id_Cliente" +
+                "&Nombre_Cliente="+TxT_Usuario.getText().toString()+
+                "&E_Mail="+Txt_Email.getText().toString()+
                 "&Contraseña="+Txt_Contra.getText().toString()+
                 "&Confirmar_Contraseña="+Txt_Contra_c.getText().toString();
 
        // url = url.replace(" ","%20"); //Reemplazará el espacio por un %20 para que funcione nuestro WB.
 
         //Estas 2 lineas nos permiten establecer la comunicación con los 2 métodos de onErrorResponse y onResponse.
+
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this); /*Con esta realiza el llamado e intenta conectarse para saber si hay error e
-                                                                                            ir a onErrorResponse o correcto e ir a onResponse.*/
+                                                                                                                             ir a onErrorResponse o correcto e ir a onResponse.*/
         request.add(jsonObjectRequest);
+
+
 
     }
 
@@ -147,9 +162,12 @@ public class RegistroFragment extends Fragment implements Response.Listener<JSON
 
     @Override
     public void onErrorResponse(VolleyError error) {
+        
         progreso.hide();
         Toast.makeText(getContext(),"No se pudo registrar "+error.toString(),Toast.LENGTH_SHORT).show(); //Creamos un aviso para cuando se registre exitosamente.
         Log.i("Error",error.toString());
+
+
 
     }
 

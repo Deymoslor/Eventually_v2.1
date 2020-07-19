@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
+import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentGrupos;
 import cursos.alain.eventually_v2.Fragments.MainFragment;
 
@@ -68,6 +69,13 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
             fragmentTransaction.replace(R.id.container, new FragmentGrupos());
             fragmentTransaction.commit();
         }
+        if(menuItem.getItemId() == R.id.registros) {
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, new FragmentAdmin());
+            fragmentTransaction.commit();
+        }
+
 
         return false;
     }
