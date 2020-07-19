@@ -27,5 +27,12 @@
     <string name="close">close</string>
     <string name="main_fragment">Main Fragment</string>
     <string name="grupos_fragment">grupos fragment</string>
+    <string name="opciones_de_registros">OPCIONES DE REGISTROS.</string>
+    <string name="opciones">Opciones</string>
+    <string name="crud_registros">CRUD REGISTROS</string>
+    <string name="buscar">Buscar</string>
+    <string name="ingrese_documento">Ingrese Documento</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
 
 </resources>

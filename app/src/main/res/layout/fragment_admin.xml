@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:paddingTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="@string/opciones_de_registros">
+    </TextView>
+
+    <Button
+        android:id="@+id/registros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/opciones"
+        android:textSize="20sp"
+        android:textStyle="bold">
+    </Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="@string/opciones_de_registros">
+    </TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/opciones"
+        android:textSize="20sp"
+        android:textStyle="bold">
+    </Button>
+    <TextView
+        android:id="@+id/Txt_regisstros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="@string/opciones_de_registros">
+    </TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/opciones"
+        android:textSize="20sp"
+        android:textStyle="bold">
+    </Button>
+    <TextView
+        android:id="@+id/Txt_registros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="@string/opciones_de_registros">
+    </TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/opciones"
+        android:textSize="20sp"
+        android:textStyle="bold">
+    </Button>
+
+
+
+
+</LinearLayout>
