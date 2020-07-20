@@ -35,4 +35,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Ingresar_principal);
 
     }
+
+    public void Login(View view) {
+        Intent Atras = new Intent(this, MainActivity.class);
+        startActivity(Atras);
+    }
 }

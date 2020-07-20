@@ -8,15 +8,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class registros_admin extends AppCompatActivity {
 
@@ -46,7 +52,25 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                buscarCliente("http://192.168.1.69/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
+                buscarCliente("http://192.168.1.56/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
+
+            }
+        });
+
+        Btn_Editar.setOnClickListener(new View.OnClickListener() { //Llamamos el botón para editar usuarios.
+            @Override
+            public void onClick(View v) {
+
+                ejecutarServicio("http://192.168.1.56/Eventually_01/Editar_Usuario.php");
+
+            }
+        });
+
+        Btn_Eliminar.setOnClickListener(new View.OnClickListener() { //Llamamos el botón para eliminar usuarios.
+            @Override
+            public void onClick(View v) {
+
+                eliminarCliente("http://192.168.1.56/Eventually_01/Eliminar_Usuario.php");
 
             }
         });
@@ -74,7 +98,7 @@ public class registros_admin extends AppCompatActivity {
                         Txt_Contra_c.setText(jsonObject.getString("Confirmar_Contraseña"));
 
                     } catch (JSONException e) {
-                        Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Busqueda realizada ^^ " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
                 }
@@ -89,6 +113,96 @@ public class registros_admin extends AppCompatActivity {
         });
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
+    }
+
+    //Creamos un nuevo método que nos permitirá hacer la edición de datos (Es exactamente el mismo código que el de insertar).
+    private void ejecutarServicio(String URL){ //Meotodo que enviará las peticiones al servidor.
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() { //Declararemos una petición declarando el tipo de llamada (POST como en el WS).
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Edición realizada ^^", Toast.LENGTH_SHORT).show();
+                Txt_Documento.setText("");
+                Txt_Usuario.setText("");
+                Txt_Email.setText("");
+                Txt_Contra.setText("");
+                Txt_Contra_c.setText("");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Algo ha salido mal :c " + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        }){
+
+            //Generamos el metodo Getparams para definir los parametros que enviaremos a el servidor para lo que haremos uso de un objeto Math.
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> parametros=new HashMap<String, String>();
+
+                //Meidante el método put, definimos los datos que vamos a enviar.
+                parametros.put("Documento",Txt_Documento.getText().toString());
+                parametros.put("Nombre_Cliente",Txt_Usuario.getText().toString());
+                parametros.put("E_mail",Txt_Email.getText().toString());
+                parametros.put("Contraseña",Txt_Contra.getText().toString());
+                parametros.put("Confirmar_Contraseña",Txt_Contra_c.getText().toString());
+
+                return parametros;
+            }
+        };
+        //Aquí procesaremos las peticiones hechas por nuestra app para que la libreria se encargue de ejecutarlas.
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest); //Aquí enviamos la solicitud agregando el objeto string request.
+
+    }
+
+    //Creamos un nuevo método que nos permitirá hacer la eliminación de datos (Es exactamente el mismo código que el de insertar y el editar).
+    private void eliminarCliente(String URL){ //Meotodo que enviará las peticiones al servidor.
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() { //Declararemos una petición declarando el tipo de llamada (POST como en el WS).
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Se ha eliminado exitosamente ^^", Toast.LENGTH_SHORT).show();
+                Txt_Documento.setText("");
+                Txt_Usuario.setText("");
+                Txt_Email.setText("");
+                Txt_Contra.setText("");
+                Txt_Contra_c.setText("");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Algo ha salido mal :c " + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        }){
+
+            //Generamos el metodo Getparams para definir los parametros que enviaremos a el servidor para lo que haremos uso de un objeto Math.
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> parametros=new HashMap<String, String>();
+
+                //Meidante el método put, definimos los datos que vamos a enviar.
+                parametros.put("Documento",Txt_Documento.getText().toString());
+
+                return parametros;
+            }
+        };
+        //Aquí procesaremos las peticiones hechas por nuestra app para que la libreria se encargue de ejecutarlas.
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest); //Aquí enviamos la solicitud agregando el objeto string request.
+
+    }
+
+    private void limpiarFormulario(){
+
+        Txt_Documento.setText("");
+        Txt_Usuario.setText("");
+        Txt_Email.setText("");
+        Txt_Contra.setText("");
+        Txt_Contra_c.setText("");
+
     }
 
 }

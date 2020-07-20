@@ -42,7 +42,7 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicio("http://192.168.1.69/eventually_01/Registrar_Usuario.php");
+                ejecutarServicio("http://192.168.1.56/Eventually_01/Registrar_Usuario.php");
 
             }
         });
@@ -57,7 +57,7 @@ public class registro_Usuarios extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() { //Declararemos una petición declarando el tipo de llamada (POST como en el WS).
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(), "Operación Exitosa", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Registrado exitosamente ^^", Toast.LENGTH_SHORT).show();
                 Txt_Documento.setText("");
                 Txt_Usuario.setText("");
                 Txt_Email.setText("");
