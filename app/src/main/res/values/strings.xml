@@ -34,5 +34,6 @@
     <string name="ingrese_documento">Ingrese Documento</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="atras">Atras</string>
 
 </resources>

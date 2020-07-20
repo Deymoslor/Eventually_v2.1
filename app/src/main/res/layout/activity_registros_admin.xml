@@ -57,10 +57,10 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/Nombre"
+        android:hint="@string/Nombre"
+        android:textColorHint="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimary">
+        android:textSize="25sp">
     </EditText>
 
     <EditText
@@ -70,10 +70,10 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/Email"
+        android:hint="@string/Email"
+        android:textColorHint="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimary">
+        android:textSize="25sp">
     </EditText>
 
     <EditText
@@ -83,10 +83,10 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/Contraseña"
+        android:hint="@string/Contraseña"
+        android:textColorHint="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimary">
+        android:textSize="25sp">
     </EditText>
 
     <EditText
@@ -96,10 +96,10 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/Contraseña"
+        android:hint="@string/CContraseña"
+        android:textColorHint="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimary">
+        android:textSize="25sp">
     </EditText>
 
 
