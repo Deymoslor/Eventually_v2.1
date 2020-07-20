@@ -23,12 +23,15 @@ public class registros_admin extends AppCompatActivity {
     EditText Txt_Documento, Txt_Usuario, Txt_Email, Txt_Contra, Txt_Contra_c;
     Button Btn_Buscar,Btn_Editar,Btn_Eliminar;
 
+
+
     RequestQueue requestQueue; //Definimos este request aquí ya que varios metodos harán uso del mismo objeto.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registros_admin);
+
 
         Txt_Documento = (EditText) findViewById(R.id.Txt_Documento);
         Txt_Usuario = (EditText) findViewById(R.id.Txt_Usuario);
@@ -43,7 +46,7 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                buscarCliente("http://192.168.1.56/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
+                buscarCliente("http://192.168.1.69/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
 
             }
         });
@@ -55,23 +58,23 @@ public class registros_admin extends AppCompatActivity {
 
         JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {//Declaramos el típo de llamada que queremos realizar, en este caso GET como lo tenemos en nuestro PHP.
             @Override
-            public void onResponse(JSONArray response) {
-
+            public void onResponse(JSONArray jsonArray) {
                 /**/
-                JSONObject jsonObject = null; //Declaramos un objeto tipo JSON.
-                for (int i = 0; i < response.length(); i++) { //Nos permitirá recorrer los datos obtenidos en el WS.
+                    JSONObject jsonObject = null; //Declaramos un objeto tipo JSON.
+                
+
+                for (int i = 0; i < jsonArray.length(); i++) { //Nos permitirá recorrer los datos obtenidos en el WS.
 
                     try { //Este try lo utilizaremos para asignar a cada uno de los controles que tenemos en nuestra app por medio de nuestra tabla Cliente.
 
-                        jsonObject = response.getJSONObject(i); //Vamos almacenando con cada vuelta de ciclo la información y la vamos colocando en su respectivo punto.
+                        jsonObject = jsonArray.getJSONObject(i); //Vamos almacenando con cada vuelta de ciclo la información y la vamos colocando en su respectivo punto.
                         Txt_Usuario.setText(jsonObject.getString("Nombre_Cliente"));
                         Txt_Email.setText(jsonObject.getString("E_Mail"));
                         Txt_Contra.setText(jsonObject.getString("Contraseña"));
+                        Txt_Contra_c.setText(jsonObject.getString("Confirmar_Contraseña"));
 
                     } catch (JSONException e) {
-
                         Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
 
                 }
@@ -86,7 +89,6 @@ public class registros_admin extends AppCompatActivity {
         });
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
-
     }
 
 }
