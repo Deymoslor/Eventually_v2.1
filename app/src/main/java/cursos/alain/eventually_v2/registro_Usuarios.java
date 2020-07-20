@@ -23,6 +23,7 @@ public class registro_Usuarios extends AppCompatActivity {
 
     EditText Txt_Documento, Txt_Usuario, Txt_Email, Txt_Contra, Txt_Contra_c;
     Button Btn_Registrar;
+    RequestQueue requestQueue; //Definimos este request aquí ya que varios objetos lo pueden utilizar.
 
 
     @Override
@@ -37,7 +38,7 @@ public class registro_Usuarios extends AppCompatActivity {
         Txt_Contra_c = (EditText) findViewById(R.id.Txt_Contra_c);
         Btn_Registrar = (Button) findViewById(R.id.Btn_Registrar);
 
-        Btn_Registrar.setOnClickListener(new View.OnClickListener() {
+        Btn_Registrar.setOnClickListener(new View.OnClickListener() { //Llamamos el botón para registrar usuarios.
             @Override
             public void onClick(View v) {
 
@@ -57,6 +58,11 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Operación Exitosa", Toast.LENGTH_SHORT).show();
+                Txt_Documento.setText("");
+                Txt_Usuario.setText("");
+                Txt_Email.setText("");
+                Txt_Contra.setText("");
+                Txt_Contra_c.setText("");
             }
         }, new Response.ErrorListener() {
             @Override
@@ -82,7 +88,7 @@ public class registro_Usuarios extends AppCompatActivity {
             }
         };
         //Aquí procesaremos las peticiones hechas por nuestra app para que la libreria se encargue de ejecutarlas.
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); //Aquí enviamos la solicitud agregando el objeto string request.
 
     }

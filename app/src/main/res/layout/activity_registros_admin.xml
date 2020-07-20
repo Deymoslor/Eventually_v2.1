@@ -29,7 +29,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/Txt_documentos"
+            android:id="@+id/Txt_Documento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -50,8 +50,8 @@
         </Button>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/Txt_Nombre"
+    <EditText
+        android:id="@+id/Txt_Usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -61,9 +61,9 @@
         android:textStyle="bold"
         android:textSize="25sp"
         android:textColor="@color/colorPrimary">
-    </TextView>
+    </EditText>
 
-    <TextView
+    <EditText
         android:id="@+id/Txt_Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,10 +74,10 @@
         android:textStyle="bold"
         android:textSize="25sp"
         android:textColor="@color/colorPrimary">
-    </TextView>
+    </EditText>
 
-    <TextView
-        android:id="@+id/Txt_Contraseña"
+    <EditText
+        android:id="@+id/Txt_Contra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -87,7 +87,7 @@
         android:textStyle="bold"
         android:textSize="25sp"
         android:textColor="@color/colorPrimary">
-    </TextView>
+    </EditText>
 
 
     <Button
