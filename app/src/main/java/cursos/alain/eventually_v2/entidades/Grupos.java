@@ -1,6 +1,8 @@
 package cursos.alain.eventually_v2.entidades;
 
-public class Grupos {
+import java.io.Serializable;
+
+public class Grupos implements Serializable {
     private String nombre, intereses;
     private int imagenid;
 

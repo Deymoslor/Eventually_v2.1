@@ -11,11 +11,28 @@
             <item
                 android:id="@+id/grupos"
                 android:icon="@drawable/ic_group"
-                android:title="grupos">
+                android:title="@string/mis_grupos">
             </item>
         </menu>
 
     </item>
+    <item
+        android:title="@string/mi_cuenta">
+        <menu>
+            <item
+                android:id="@+id/intereses"
+                android:icon="@drawable/ic_home"
+                android:title="@string/intereses">
+            </item>
+            <item
+                android:id="@+id/personalizarCuenta"
+                android:icon="@drawable/ic_group"
+                android:title="@string/personalizar_cuenta">
+            </item>
+        </menu>
+
+    </item>
+
     <item
         android:title="Administrador">
         <menu>
