@@ -1,5 +1,7 @@
 package cursos.alain.eventually_v2.Fragments;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +19,17 @@ import java.util.ArrayList;
 import cursos.alain.eventually_v2.Adapters.AdapterGrupos;
 import cursos.alain.eventually_v2.R;
 import cursos.alain.eventually_v2.entidades.Grupos;
+import cursos.alain.eventually_v2.iComunicaFragments;
 
 public class FragmentGrupos extends Fragment {
 
     AdapterGrupos adapterGrupos;
     RecyclerView recyclerViewGrupos;
     ArrayList<Grupos> listaGrupos;
+
+    //Referencias para comunicar fragments
+    Activity actividad;
+    iComunicaFragments interfaceComunicaFragments;
 
     @Nullable
     @Override
@@ -58,7 +65,22 @@ public class FragmentGrupos extends Fragment {
             public void onClick(View view) {
                 String nombre = listaGrupos.get(recyclerViewGrupos.getChildAdapterPosition(view)).getNombre();
                 Toast.makeText(getContext(),"Seleccionado: " + nombre, Toast.LENGTH_SHORT).show();
+                interfaceComunicaFragments.enviarGrupo(listaGrupos.get(recyclerViewGrupos.getChildAdapterPosition(view)));
             }
         });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof Activity){
+            this.actividad = (Activity) context;
+            interfaceComunicaFragments = (iComunicaFragments) this.actividad;
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 }

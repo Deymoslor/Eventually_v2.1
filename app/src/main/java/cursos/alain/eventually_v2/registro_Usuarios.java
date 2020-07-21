@@ -42,7 +42,7 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicio("http://192.168.1.56/Eventually_01/Registrar_Usuario.php");
+                ejecutarServicio("http://192.168.1.69/Eventually_01/Registrar_Usuario.php");
 
             }
         });
