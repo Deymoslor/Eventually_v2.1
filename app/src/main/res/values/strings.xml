@@ -40,5 +40,6 @@
     <string name="mis_grupos">Mis grupos</string>
     <string name="intereses">Intereses</string>
     <string name="personalizar_cuenta">Personalizar cuenta</string>
+    <string name="maestro">Maestro</string>
 
 </resources>
