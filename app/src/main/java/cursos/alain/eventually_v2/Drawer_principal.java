@@ -20,10 +20,10 @@ import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentIntereses;
 import cursos.alain.eventually_v2.Fragments.FragmentPersonalizarCuenta;
-import cursos.alain.eventually_v2.Fragments.MainFragment;
+import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.entidades.Grupos;
 
-public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,iComunicaFragments {
+public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,iComunicaFragments  {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -56,7 +56,7 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         //Cargar fragment principal
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.container, new MainFragment());
+        fragmentTransaction.add(R.id.container, new InicioFragment());
         fragmentTransaction.commit();
     }
 
@@ -67,7 +67,7 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         if(menuItem.getItemId() == R.id.home){
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new MainFragment());
+            fragmentTransaction.replace(R.id.container, new InicioFragment());
             fragmentTransaction.commit();
         }
         if(menuItem.getItemId() == R.id.grupos){
