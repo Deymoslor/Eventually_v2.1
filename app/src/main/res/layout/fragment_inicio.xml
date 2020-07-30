@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingTop="55dp"
+    android:orientation="vertical"
     tools:context=".Fragments.InicioFragment">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@drawable/fondoxd">
         <ImageView
             android:id="@+id/avatarImage"
@@ -30,41 +33,46 @@
             android:text="@string/maestro"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold">
         </TextView>
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="4dp"
+            android:layout_gravity="center"
+            android:layout_below="@id/textNickName"
             android:columnCount="2"
-            android:rowCount="3"
-            android:layout_below="@id/textNickName">
+            android:padding="4dp"
+            android:rowCount="3">
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/CardMisgrupos"
+                android:id="@+id/MisGrupos"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
+                android:foreground="?selectableItemBackground"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="6dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:foreground="?selectableItemBackground">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:src="@mipmap/logoxd_foreground">
                     </ImageView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -77,31 +85,34 @@
                     </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/GruposBusqueda"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
+                android:foreground="?selectableItemBackground"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="6dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:foreground="?selectableItemBackground">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:src="@mipmap/logoxd_foreground">
                     </ImageView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -114,31 +125,35 @@
                     </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/Mapa"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
+                android:foreground="?selectableItemBackground"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="6dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:foreground="?selectableItemBackground">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:src="@mipmap/logoxd_foreground">
+
                     </ImageView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -148,34 +163,39 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"
                         android:textStyle="bold">
+
                     </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/Micuenta"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
+                android:foreground="?selectableItemBackground"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="6dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:foreground="?selectableItemBackground">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:src="@mipmap/logoxd_foreground">
+
                     </ImageView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -185,6 +205,7 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"
                         android:textStyle="bold">
+
                     </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -193,27 +214,30 @@
                 android:id="@+id/Ajustes"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
+                android:foreground="?selectableItemBackground"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="6dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:foreground="?selectableItemBackground">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:src="@mipmap/logoxd_foreground">
+
                     </ImageView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -223,6 +247,7 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"
                         android:textStyle="bold">
+
                     </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -231,27 +256,30 @@
                 android:id="@+id/Sobremiapp"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
+                android:foreground="?selectableItemBackground"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="6dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:foreground="?selectableItemBackground">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:src="@mipmap/logoxd_foreground">
+
                     </ImageView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -261,12 +289,13 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"
                         android:textStyle="bold">
+
                     </TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
