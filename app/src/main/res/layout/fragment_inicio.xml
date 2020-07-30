@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorNegro">
+        android:background="@drawable/fondoxd">
         <ImageView
             android:id="@+id/avatarImage"
             android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:id="@+id/logo"
             android:layout_width="60dp"
             android:layout_height="50dp"
-            android:src="@drawable/logozd">
+            android:src="@mipmap/logoxd_foreground">
         </ImageView>
         <TextView
             android:id="@+id/textNickName"
