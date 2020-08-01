@@ -52,7 +52,7 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                buscarCliente("http://192.168.1.69/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
+                buscarCliente("http://192.168.1.56/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
 
             }
         });
@@ -61,7 +61,7 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicio("http://192.168.1.69/Eventually_01/Editar_Usuario.php");
+                ejecutarServicio("http:/192.168.1.56/Eventually_01/Editar_Usuario.php");
 
             }
         });
@@ -70,7 +70,7 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                eliminarCliente("http://192.168.1.69/Eventually_01/Eliminar_Usuario.php");
+                eliminarCliente("http://192.168.1.56/Eventually_01/Eliminar_Usuario.php");
 
             }
         });
