@@ -42,7 +42,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/correo"
+            android:id="@+id/Txt_Email_L"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -56,7 +56,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/Contraseña"
+            android:id="@+id/Txt_Contra_L"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -71,7 +71,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Btn_Ingresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -79,7 +79,7 @@
         android:layout_gravity="center"
         android:backgroundTint="@color/colorBoton_Prueba1"
         android:fontFamily="@font/amiko"
-        android:onClick="Ingresar"
+
         android:text="@string/Ingresar"
         android:textAlignment="center"
         android:textColor="@color/colorAzul_Sutil"
