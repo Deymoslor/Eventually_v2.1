@@ -2,7 +2,9 @@ package cursos.alain.eventually_v2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText Txt_Contraseña_L, Txt_E_Mail_L;
     Button Btn_Ingresar;
+    String E_Mail, Contraseña;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +40,25 @@ public class MainActivity extends AppCompatActivity {
         Txt_E_Mail_L = findViewById(R.id.Txt_Email_L);
         Btn_Ingresar = findViewById(R.id.Btn_Ingresar);
 
+        recuperarPreferencias(); //Llamamos aquí el método recuperar preferencias permitiendo que de este modo cada que iniciemos nos aparecerá el usuario y password correctos.
 
         Btn_Ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
+                E_Mail = Txt_E_Mail_L.getText().toString();
+                Contraseña = Txt_Contraseña_L.getText().toString();
+
+                //Evaluamos si algúno de los campos de el login están vacíos.
+                if (!E_Mail.isEmpty() && !Contraseña.isEmpty()){
+
+                    validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
+
+                }else{
+
+                    Toast.makeText(MainActivity.this, "El usuario y la contraseña no puede estár vacíos _._", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         });
@@ -57,10 +73,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                if (!response.isEmpty()){ //Codicional que nos permite evaluar si nustro response está vacío.
+                if (!response.isEmpty()){ //Codicional que nos permite evaluar si nuestro response está vacío.
+
+                    guardapreferencias(); //Este metodo lo agregamos aquí ya que se guardaran los datos unicamente cuando el Email y Contraseña existan usando este método.
 
                     Intent intent = new Intent(getApplicationContext(),Drawer_principal.class);
                     startActivity(intent);
+                    finish(); //Para dejar solo la que se está por abrir y cerrar la actual.
 
                 }else{
                     Toast.makeText(MainActivity.this,"Usuario y/o contraseña ingresadas son incorrectas :c", Toast.LENGTH_SHORT).show();
@@ -79,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError { //En este método colocaremos los parametros que nuestro servicio solicita para devolver una respuesta.
 
                 Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("E_Mail",Txt_E_Mail_L.getText().toString());
-                parametros.put("Contraseña",Txt_Contraseña_L.getText().toString());
+                parametros.put("E_Mail",E_Mail);
+                parametros.put("Contraseña",Contraseña);
 
                 return parametros; //Retornamos toda la colección de datos.
             }
@@ -89,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         //Creamos una instancia de todo la colección de datos que devolvimos arriba.
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); //Esta nos ayuda a procesar todas las peticiones hechas desde nuestra app.
-
-
 
     }
 
@@ -121,6 +138,37 @@ public class MainActivity extends AppCompatActivity {
     public void Login(View view) {
         Intent Atras = new Intent(this, MainActivity.class);
         startActivity(Atras);
+    }
+
+    //Creamos un nuevo método que nos ayudará a guardar el usuario y contraseña para que el usuario final no se tenga que estar loggeando.
+    private void guardapreferencias(){
+
+        //Creamos una nuevo objeto con el constructor getSharedPreferences al cual le pasaremos por parámetro el nombre de las preferencias y el modo de acceso de estas.
+        SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
+
+        //Definimos que lo que queremos hacer es guardar o actualizar datos en la preferencia.
+        SharedPreferences.Editor editor = preferences.edit();
+
+        //A continuación mediante el put string agregamos el usuario y contraseña y el valor que se guardará en cada uno.
+        editor.putString("E_Mail",E_Mail);
+        editor.putString("Contraseña",Contraseña);
+
+        editor.putBoolean("sesion",true); //Esta la utilizaremos más adelante para guardar la sesión en caso de ser correcto.
+
+        editor.commit(); //Mediante este método guardamos todos los cambios.
+
+    }
+
+    //Cremos otro método que nos permita recuperar los datos.
+    private void recuperarPreferencias(){
+
+        //Cremos estos métodos con exactamente los mismos nombres que en los de arriba.
+        SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
+
+        //Asignamos los valores a cada espacio que corresponde.
+        Txt_E_Mail_L.setText(preferences.getString("E_Mail",""));
+        Txt_Contraseña_L.setText(preferences.getString("Contraseña",""));
+
     }
 
  }

@@ -5,6 +5,7 @@
     <string name="Contraseña">Contraseña</string>
     <string name="Correo">Correo Electronico</string>
     <string name="Ingresar">Ingresar</string>
+    <string name="Cerrar_Sesion">Cerrar Sesión</string>
     <string name="Olvidacion">¿Olvidaste la contraseña?</string>
     <string name="Registrarse">¿No tienes cuenta?</string>
     <string name="Usuario">Apodo</string>

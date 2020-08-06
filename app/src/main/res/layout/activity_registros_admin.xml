@@ -114,6 +114,7 @@
         android:textStyle="bold"
         android:textSize="18sp">
     </Button>
+
     <Button
         android:id="@+id/Btn_Eliminar"
         android:layout_width="wrap_content"
@@ -126,6 +127,17 @@
         android:textSize="18sp">
     </Button>
 
+    <Button
+        android:id="@+id/Btn_Cerrar_Sesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/Cerrar_Sesion"
+        android:textStyle="bold"
+        android:textSize="18sp">
+    </Button>
 
 
 </LinearLayout>
