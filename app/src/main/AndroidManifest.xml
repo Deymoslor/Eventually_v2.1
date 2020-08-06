@@ -17,6 +17,12 @@
 
         <!--<activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar.-->
         <activity android:name=".registros_admin" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity
             android:name=".Drawer_principal"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -27,7 +33,13 @@
         <activity
             android:name=".Presentacion"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".registro_Usuarios"
             android:screenOrientation="portrait"
@@ -36,11 +48,6 @@
             android:name=".Splash_activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

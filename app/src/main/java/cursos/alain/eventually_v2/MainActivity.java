@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 Contraseña = Txt_Contraseña_L.getText().toString();
 
                 //Evaluamos si algúno de los campos de el login están vacíos.
-                if (!E_Mail.isEmpty() && !Contraseña.isEmpty()){
+                if (!E_Mail.isEmpty() || !Contraseña.isEmpty()){
 
-                    validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
+                    validarCliente("http://192.168.1.69/Eventually_01/Validar_Usuario.php");
 
                 }else{
 
-                    Toast.makeText(MainActivity.this, "El usuario y la contraseña no puede estár vacíos _._", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Email o contraseña vacios.", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        //Creamos una instancia de todo la colección de datos que devolvimos arriba.
+        //Creamos una instancia detodo la colección de datos que devolvimos arriba.
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); //Esta nos ayuda a procesar todas las peticiones hechas desde nuestra app.
 

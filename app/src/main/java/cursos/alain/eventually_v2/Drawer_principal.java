@@ -30,8 +30,6 @@ import cursos.alain.eventually_v2.entidades.Grupos;
 
 public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,iComunicaFragments  {
 
-    Button Btn_Cerrar_Sesion;
-
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
@@ -48,24 +46,6 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_principal);
-
-        Btn_Cerrar_Sesion = findViewById(R.id.Btn_Cerrar_Sesion);
-
-        Btn_Cerrar_Sesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE); //Recuperamos la preferencia guardada.
-                preferences.edit().clear(); //Limpiamos esta preferencia.
-
-                //Volvemos a llamar a nuestro activity login como acción de que nuestro usuario y password ha sido eliminado de nuestras preferencias o mejor dicho cerró sesión.
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
-
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer);
