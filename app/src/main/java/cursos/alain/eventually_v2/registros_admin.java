@@ -2,6 +2,9 @@ package cursos.alain.eventually_v2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +30,7 @@ import java.util.Map;
 public class registros_admin extends AppCompatActivity {
 
     EditText Txt_Documento, Txt_Usuario, Txt_Email, Txt_Contra, Txt_Contra_c;
-    Button Btn_Buscar,Btn_Editar,Btn_Eliminar;
+    Button Btn_Buscar,Btn_Editar,Btn_Eliminar,Btn_Cerrar_Sesion;
 
 
 
@@ -47,6 +50,7 @@ public class registros_admin extends AppCompatActivity {
         Btn_Buscar = (Button) findViewById(R.id.Btn_Buscar);
         Btn_Editar = (Button) findViewById(R.id.Btn_Editar);
         Btn_Eliminar = (Button) findViewById(R.id.Btn_Eliminar);
+        Btn_Cerrar_Sesion = (Button) findViewById(R.id.Btn_Cerrar_Sesion);
 
         Btn_Buscar.setOnClickListener(new View.OnClickListener() { //llamamos el botón para buscar usuarios.
             @Override
@@ -71,6 +75,21 @@ public class registros_admin extends AppCompatActivity {
             public void onClick(View v) {
 
                 eliminarCliente("http://192.168.1.56/Eventually_01/Eliminar_Usuario.php");
+
+            }
+        });
+
+        Btn_Cerrar_Sesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Recuperamos las preferencia.
+                SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
+                preferences.edit().clear().commit(); //Limpiamos las preferencias mediante este método.
+
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+                finish();
 
             }
         });
