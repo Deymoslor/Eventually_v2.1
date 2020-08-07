@@ -12,19 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/fondoxd">
+        android:background="@drawable/fondointerno">
+
         <ImageView
             android:id="@+id/avatarImage"
             android:layout_width="match_parent"
             android:layout_height="176dp"
-            android:src="@drawable/maestro">
-        </ImageView>
+            android:src="@drawable/maestro"></ImageView>
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:src="@mipmap/logoxd_foreground">
         </ImageView>
+
         <TextView
             android:id="@+id/textNickName"
             android:layout_width="match_parent"
@@ -32,10 +34,9 @@
             android:layout_below="@id/avatarImage"
             android:text="@string/maestro"
             android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:textColor="#B2CEDE"
             android:textSize="30sp"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
 
         <GridLayout
             android:layout_width="match_parent"
@@ -70,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:src="@mipmap/logoxd_foreground">
+                        android:src="@drawable/misgrupos">
                     </ImageView>
 
                     <TextView
@@ -79,7 +80,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Mis grupos"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorvioleta"
                         android:textSize="16sp"
                         android:textStyle="bold">
                     </TextView>
@@ -110,16 +111,16 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:src="@mipmap/logoxd_foreground">
+                        android:src="@drawable/mapas">
                     </ImageView>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:text="Mis grupos"
+                        android:text="Mapa"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorvioleta"
                         android:textSize="16sp"
                         android:textStyle="bold">
                     </TextView>
@@ -150,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:src="@mipmap/logoxd_foreground">
+                        android:src="@drawable/buscargrupos">
 
                     </ImageView>
 
@@ -158,9 +159,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:text="Mis grupos"
+                        android:text="Buscar grupos"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorvioleta"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
@@ -192,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:src="@mipmap/logoxd_foreground">
+                        android:src="@drawable/perfil">
 
                     </ImageView>
 
@@ -200,9 +201,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:text="Mis grupos"
+                        android:text="Perfil"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorvioleta"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
@@ -234,7 +235,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:src="@mipmap/logoxd_foreground">
+                        android:src="@drawable/configuracion">
 
                     </ImageView>
 
@@ -242,9 +243,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:text="Mis grupos"
+                        android:text="Configuración"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorvioleta"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
@@ -276,7 +277,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:src="@mipmap/logoxd_foreground">
+                        android:src="@drawable/informacion">
 
                     </ImageView>
 
@@ -284,9 +285,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:text="Mis grupos"
+                        android:text="Información"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorvioleta"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
