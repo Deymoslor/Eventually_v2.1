@@ -20,14 +20,9 @@
         android:title="@string/mi_cuenta">
         <menu>
             <item
-                android:id="@+id/intereses"
-                android:icon="@drawable/ic_home"
-                android:title="@string/intereses">
-            </item>
-            <item
                 android:id="@+id/personalizarCuenta"
                 android:icon="@drawable/ic_group"
-                android:title="@string/personalizar_cuenta">
+                android:title="@string/mi_cuenta">
             </item>
         </menu>
 
