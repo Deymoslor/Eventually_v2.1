@@ -18,13 +18,7 @@
             android:id="@+id/avatarImage"
             android:layout_width="match_parent"
             android:layout_height="176dp"
-            android:src="@drawable/maestro"></ImageView>
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/logoxd_foreground">
+            android:src="@drawable/maestro">
         </ImageView>
 
         <TextView
@@ -36,7 +30,8 @@
             android:textAlignment="center"
             android:textColor="#B2CEDE"
             android:textSize="30sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <GridLayout
             android:layout_width="match_parent"
