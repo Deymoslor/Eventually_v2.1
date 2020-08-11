@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:layout_gravity="center"
+            android:onClick="Ingresa"
             android:text="@string/enter"
             android:textSize="20sp"
             android:id="@+id/Btn_enter">

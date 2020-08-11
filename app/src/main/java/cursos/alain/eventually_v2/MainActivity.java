@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!E_Mail.isEmpty() || !Contraseña.isEmpty()){
 
                     validarCliente("http://192.168.1.69/Eventually_01/Validar_Usuario.php");
+                    validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
 
                 }else{
 
