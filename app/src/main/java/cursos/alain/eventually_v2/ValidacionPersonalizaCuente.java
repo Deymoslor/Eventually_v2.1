@@ -38,8 +38,10 @@ public class ValidacionPersonalizaCuente extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicioDocumento("http://192.168.1.56/Eventually_01/Registrar_Documento.php");
 
+
+                ejecutarServicioDocumento("http://192.168.1.69/Eventually_01/Registrar_Documento.php");
+                //ejecutarServicioDocumento("http://192.168.1.56/Eventually_01/Registrar_Documento.php");
             }
         });
 
@@ -58,6 +60,9 @@ public class ValidacionPersonalizaCuente extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Registrado exitosamente ^^", Toast.LENGTH_SHORT).show();
 
                 Txt_Documento_E.setText("");
+                Intent intent = new Intent(getApplicationContext(),PersonalizarDatosUsuario.class);
+                startActivity(intent);
+
 
 
             }
@@ -75,7 +80,19 @@ public class ValidacionPersonalizaCuente extends AppCompatActivity {
                 Map<String,String> parametros=new HashMap<String, String>();
 
                 //Meidante el método put, definimos los datos que vamos a enviar.
-                parametros.put("Documento",Txt_Documento_E.getText().toString());
+                parametros.put("Documento",Txt_Documento_E.getText().toString().trim());
+                /*
+                parametros.put("Id_Usuario","");
+                parametros.put("Nombre1","".toString());
+                parametros.put("Nombre2","".toString());
+                parametros.put("Apellido1","".toString());
+                parametros.put("Apellido2", "".toString());
+                parametros.put("Edad","".toString());
+                parametros.put("Celular","".toString());
+                parametros.put("Etiquetas1","".toString());
+                parametros.put("Etiquetas2","".toString());
+                parametros.put("Etiquetas3","".toString());*/
+
 
                 return parametros;
             }
