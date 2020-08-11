@@ -24,6 +24,7 @@ import cursos.alain.eventually_v2.Fragments.DetalleGrupoFragment;
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentIntereses;
+import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.FragmentPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.entidades.Grupos;
@@ -96,7 +97,7 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         if(menuItem.getItemId() == R.id.personalizarCuenta) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new FragmentPersonalizarCuenta());
+            fragmentTransaction.replace(R.id.container, new FragmentPermisoPersonalizarCuenta());
             fragmentTransaction.commit();
         }
 

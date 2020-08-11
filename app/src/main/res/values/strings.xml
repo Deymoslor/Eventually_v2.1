@@ -43,5 +43,10 @@
     <string name="personalizar_cuenta">Personalizar cuenta</string>
     <string name="maestro">Maestro</string>
     <string name="personaliza_tu_cuenta">Personaliza tu cuenta</string>
+    <string name="personaliza_tu_foto">Personaliza tu foto</string>
+    <string name="personaliza_tus_datos">Personaliza Tus datos</string>
+    <string name="enter">Enter</string>
+    <string name="ingrese_su_documento">Ingrese su Documento</string>
+    <string name="documento">Documento</string>
 
 </resources>

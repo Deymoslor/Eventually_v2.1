@@ -14,15 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <!--<activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar.-->
+        <activity android:name=".PersonalizarDatosUsuario"></activity>
+        <activity android:name=".ValidacionPersonalizaCuente" /> <!-- <activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar. -->
         <activity android:name=".registros_admin" />
-
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Drawer_principal"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -34,11 +31,11 @@
             android:name=".Presentacion"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".registro_Usuarios"
@@ -47,8 +44,7 @@
         <activity
             android:name=".Splash_activity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
