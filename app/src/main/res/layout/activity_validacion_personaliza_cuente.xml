@@ -24,7 +24,8 @@
             android:layout_gravity="center"
             android:hint="@string/documento"
             android:textSize="25sp"
-            android:inputType="number">
+            android:inputType="number"
+            android:id="@+id/Txt_Documento_E">
 
         </EditText>
 

@@ -104,7 +104,6 @@ public class registros_admin extends AppCompatActivity {
             public void onResponse(JSONArray jsonArray) {
                 /**/
                     JSONObject jsonObject = null; //Declaramos un objeto tipo JSON.
-                
 
                 for (int i = 0; i < jsonArray.length(); i++) { //Nos permitirá recorrer los datos obtenidos en el WS.
 
