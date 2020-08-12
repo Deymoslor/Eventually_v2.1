@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class registros_admin extends AppCompatActivity {
 
-    EditText Txt_Documento, Txt_Usuario, Txt_Email, Txt_Contra, Txt_Contra_c;
+    EditText Txt_Id_Usuario, Txt_UserName, Txt_Email, Txt_Contra, Txt_Contra_c;
     Button Btn_Buscar,Btn_Editar,Btn_Eliminar,Btn_Cerrar_Sesion;
 
 
@@ -42,8 +42,8 @@ public class registros_admin extends AppCompatActivity {
         setContentView(R.layout.activity_registros_admin);
 
 
-        Txt_Documento = (EditText) findViewById(R.id.Txt_Documento);
-        Txt_Usuario = (EditText) findViewById(R.id.Txt_Usuario);
+        Txt_Id_Usuario = (EditText) findViewById(R.id.Txt_Id_Usuario);
+        Txt_UserName = (EditText) findViewById(R.id.Txt_UserName);
         Txt_Email = (EditText) findViewById(R.id.Txt_Email);
         Txt_Contra = (EditText) findViewById(R.id.Txt_Contra);
         Txt_Contra_c = (EditText) findViewById(R.id.Txt_Contra_c);
@@ -56,7 +56,8 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                buscarCliente("http://192.168.1.56/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Documento.getText()+"");
+                buscarCliente("http://192.168.1.69/Eventually_01/Buscar_Usuarios.php?Id_Usuario="+Txt_Id_Usuario.getText()+"");
+                //buscarCliente("http://192.168.1.56/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Id_Usuario.getText()+"");
 
             }
         });
@@ -65,7 +66,8 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicio("http:/192.168.1.56/Eventually_01/Editar_Usuario.php");
+                ejecutarServicio("http:/192.168.1.69/Eventually_01/Editar_Usuario.php");
+                //ejecutarServicio("http:/192.168.1.56/Eventually_01/Editar_Usuario.php");
 
             }
         });
@@ -74,7 +76,8 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                eliminarCliente("http://192.168.1.56/Eventually_01/Eliminar_Usuario.php");
+                eliminarCliente("http://192.168.1.69/Eventually_01/Eliminar_Usuario.php");
+                //eliminarCliente("http://192.168.1.56/Eventually_01/Eliminar_Usuario.php");
 
             }
         });
@@ -110,7 +113,7 @@ public class registros_admin extends AppCompatActivity {
                     try { //Este try lo utilizaremos para asignar a cada uno de los controles que tenemos en nuestra app por medio de nuestra tabla Cliente.
 
                         jsonObject = jsonArray.getJSONObject(i); //Vamos almacenando con cada vuelta de ciclo la información y la vamos colocando en su respectivo punto.
-                        Txt_Usuario.setText(jsonObject.getString("Nombre_Cliente"));
+                        Txt_UserName.setText(jsonObject.getString("UserName"));
                         Txt_Email.setText(jsonObject.getString("E_Mail"));
                         Txt_Contra.setText(jsonObject.getString("Contraseña"));
                         Txt_Contra_c.setText(jsonObject.getString("Confirmar_Contraseña"));
@@ -140,8 +143,8 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Edición realizada ^^", Toast.LENGTH_SHORT).show();
-                Txt_Documento.setText("");
-                Txt_Usuario.setText("");
+                Txt_Id_Usuario.setText("");
+                Txt_UserName.setText("");
                 Txt_Email.setText("");
                 Txt_Contra.setText("");
                 Txt_Contra_c.setText("");
@@ -160,8 +163,8 @@ public class registros_admin extends AppCompatActivity {
                 Map<String,String> parametros=new HashMap<String, String>();
 
                 //Meidante el método put, definimos los datos que vamos a enviar.
-                parametros.put("Documento",Txt_Documento.getText().toString());
-                parametros.put("Nombre_Cliente",Txt_Usuario.getText().toString());
+                parametros.put("Id_Usuario",Txt_Id_Usuario.getText().toString());
+                parametros.put("UserName",Txt_UserName.getText().toString());
                 parametros.put("E_mail",Txt_Email.getText().toString());
                 parametros.put("Contraseña",Txt_Contra.getText().toString());
                 parametros.put("Confirmar_Contraseña",Txt_Contra_c.getText().toString());
@@ -182,8 +185,8 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Se ha eliminado exitosamente ^^", Toast.LENGTH_SHORT).show();
-                Txt_Documento.setText("");
-                Txt_Usuario.setText("");
+                Txt_Id_Usuario.setText("");
+                Txt_UserName.setText("");
                 Txt_Email.setText("");
                 Txt_Contra.setText("");
                 Txt_Contra_c.setText("");
@@ -202,7 +205,7 @@ public class registros_admin extends AppCompatActivity {
                 Map<String,String> parametros=new HashMap<String, String>();
 
                 //Meidante el método put, definimos los datos que vamos a enviar.
-                parametros.put("Documento",Txt_Documento.getText().toString());
+                parametros.put("Id_Usuario",Txt_Id_Usuario.getText().toString());
 
                 return parametros;
             }
@@ -215,8 +218,8 @@ public class registros_admin extends AppCompatActivity {
 
     private void limpiarFormulario(){
 
-        Txt_Documento.setText("");
-        Txt_Usuario.setText("");
+        Txt_Id_Usuario.setText("");
+        Txt_UserName.setText("");
         Txt_Email.setText("");
         Txt_Contra.setText("");
         Txt_Contra_c.setText("");
