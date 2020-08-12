@@ -21,7 +21,7 @@ package cursos.alain.eventually_v2;
 
 public class registro_Usuarios extends AppCompatActivity {
 
-    EditText Txt_Documento, Txt_Usuario, Txt_Email, Txt_Contra, Txt_Contra_c;
+    EditText Txt_UserName, Txt_Email, Txt_Contra, Txt_Contra_c;
     Button Btn_Registrar;
     RequestQueue requestQueue; //Definimos este request aquí ya que varios objetos lo pueden utilizar.
 
@@ -31,8 +31,7 @@ public class registro_Usuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro__usuarios);
 
-        Txt_Documento = (EditText) findViewById(R.id.Txt_Documento);
-        Txt_Usuario = (EditText) findViewById(R.id.Txt_Usuario);
+        Txt_UserName = (EditText) findViewById(R.id.Txt_UserName);
         Txt_Email = (EditText) findViewById(R.id.Txt_Email);
         Txt_Contra = (EditText) findViewById(R.id.Txt_Contra);
         Txt_Contra_c = (EditText) findViewById(R.id.Txt_Contra_c);
@@ -42,8 +41,8 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                ejecutarServicio("http://192.168.1.69/Eventually_01/Registrar_Usuario.php");
                 //ejecutarServicio("http://192.168.1.56/Eventually_01/Registrar_Usuario.php");
-                ejecutarServicio("http://192.168.1.56/Eventually_01/Registrar_Usuario.php");
 
             }
         });
@@ -59,8 +58,8 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Registrado exitosamente ^^", Toast.LENGTH_SHORT).show();
-                Txt_Documento.setText("");
-                Txt_Usuario.setText("");
+
+                Txt_UserName.setText("");
                 Txt_Email.setText("");
                 Txt_Contra.setText("");
                 Txt_Contra_c.setText("");
@@ -79,9 +78,9 @@ public class registro_Usuarios extends AppCompatActivity {
                 Map<String,String> parametros=new HashMap<String, String>();
 
                 //Meidante el método put, definimos los datos que vamos a enviar.
-                parametros.put("Documento",Txt_Documento.getText().toString());
-                parametros.put("Nombre_Cliente",Txt_Usuario.getText().toString());
-                parametros.put("E_mail",Txt_Email.getText().toString());
+
+                parametros.put("UserName",Txt_UserName.getText().toString());
+                parametros.put("E_Mail",Txt_Email.getText().toString());
                 parametros.put("Contraseña",Txt_Contra.getText().toString());
                 parametros.put("Confirmar_Contraseña",Txt_Contra_c.getText().toString());
 

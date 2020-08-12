@@ -34,21 +34,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/Txt_Documento"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:ems="10"
-                android:fontFamily="@font/amiko"
-                android:hint="Documento"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorAzul_Sutil"
-                android:textColorHint="@color/colorAzul_Sutil"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/Txt_Usuario"
+                android:id="@+id/Txt_UserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"

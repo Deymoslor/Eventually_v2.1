@@ -48,5 +48,7 @@
     <string name="enter">Enter</string>
     <string name="ingrese_su_documento">Ingrese su Documento</string>
     <string name="documento">Documento</string>
+    <string name="ingrese_el_id_usuario">Ingrese el id Usuario</string>
+    <string name="username">UserName</string>
 
 </resources>

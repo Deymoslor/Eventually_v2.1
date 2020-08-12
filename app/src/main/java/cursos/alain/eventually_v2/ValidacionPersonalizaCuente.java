@@ -38,10 +38,8 @@ public class ValidacionPersonalizaCuente extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
-                ejecutarServicioDocumento("http://192.168.1.69/Eventually_01/Registrar_Documento.php");
                 //ejecutarServicioDocumento("http://192.168.1.56/Eventually_01/Registrar_Documento.php");
+                ejecutarServicioDocumento("http://192.168.1.56/Eventually_01/Registrar_Documento.php");
             }
         });
 
