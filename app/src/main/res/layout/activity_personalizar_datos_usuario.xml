@@ -20,6 +20,14 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_weight="2">
+        <EditText
+            android:id="@+id/Txt_Documento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/documento"
+            android:textSize="25sp">
+        </EditText>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,12 +35,14 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <EditText
+                android:id="@+id/Txt_Nombre1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Nombre 1"
                 android:textSize="25sp">
             </EditText>
             <EditText
+                android:id="@+id/Txt_Nombre2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Nombre 2"
@@ -46,12 +56,14 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <EditText
+                android:id="@+id/Txt_Apellido1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Apellido 1"
                 android:textSize="25sp">
             </EditText>
             <EditText
+                android:id="@+id/Txt_Apellido2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Apellido 2"
@@ -65,6 +77,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <EditText
+                android:id="@+id/Txt_Edad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Edad"
@@ -72,6 +85,7 @@
                 android:inputType="number">
             </EditText>
             <EditText
+                android:id="@+id/Txt_Celular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Celular"
@@ -87,18 +101,21 @@
             android:layout_gravity="center"
             >
             <EditText
+                android:id="@+id/Txt_Etiqueta1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Etiqueta 1"
                 android:textSize="25sp">
             </EditText>
             <EditText
+                android:id="@+id/Txt_Etiqueta2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Etiqueta 2"
                 android:textSize="25sp">
             </EditText>
             <EditText
+                android:id="@+id/Txt_Etiqueta3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Etiqueta 3"
@@ -120,6 +137,7 @@
             android:src="@drawable/maestro">
         </ImageView>
         <Button
+            android:id="@+id/Btn_Editar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
