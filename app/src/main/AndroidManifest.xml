@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".PersonalizarDatosUsuario"></activity>
-        <activity android:name=".ValidacionPersonalizaCuente" /> <!-- <activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar. -->
+        <!-- <activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar. -->
         <activity android:name=".registros_admin" />
         <activity
             android:name=".MainActivity"

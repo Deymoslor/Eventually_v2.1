@@ -35,38 +35,17 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <EditText
-                android:id="@+id/Txt_Nombre1"
+                android:id="@+id/Txt_Nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Nombre 1"
+                android:hint="@string/Nombre"
                 android:textSize="25sp">
             </EditText>
             <EditText
-                android:id="@+id/Txt_Nombre2"
+                android:id="@+id/Txt_Apellido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Nombre 2"
-                android:textSize="25sp">
-            </EditText>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <EditText
-                android:id="@+id/Txt_Apellido1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Apellido 1"
-                android:textSize="25sp">
-            </EditText>
-            <EditText
-                android:id="@+id/Txt_Apellido2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Apellido 2"
+                android:hint="@string/apellido"
                 android:textSize="25sp">
             </EditText>
         </LinearLayout>
@@ -85,7 +64,7 @@
                 android:inputType="number">
             </EditText>
             <EditText
-                android:id="@+id/Txt_Celular"
+                android:id="@+id/TxtCelular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Celular"

@@ -50,5 +50,6 @@
     <string name="documento">Documento</string>
     <string name="ingrese_el_id_usuario">Ingrese el id Usuario</string>
     <string name="username">UserName</string>
+    <string name="apellido">Apellido</string>
 
 </resources>

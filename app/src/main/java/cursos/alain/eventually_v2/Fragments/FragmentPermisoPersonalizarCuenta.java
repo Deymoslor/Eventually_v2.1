@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import cursos.alain.eventually_v2.R;
-import cursos.alain.eventually_v2.ValidacionPersonalizaCuente;
 
 public class FragmentPermisoPersonalizarCuenta extends Fragment {
     Button Bnt_personalizar;
