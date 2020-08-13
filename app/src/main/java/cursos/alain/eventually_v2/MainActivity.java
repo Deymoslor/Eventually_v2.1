@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -74,9 +75,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                if (!response.isEmpty()){ //Codicional que nos permite evaluar si nuestro response está vacío.
+                if (!response.isEmpty()) { //Codicional que nos permite evaluar si nuestro response está vacío.
 
-                    guardapreferencias(); //Este metodo lo agregamos aquí ya que se guardaran los datos unicamente cuando el Email y Contraseña existan usando este método.
+                    Log.d("cadena", response);
+
+                    String[] parts = response.split(",");
+
+                    String[] si = parts[0].split(":");
+                    String idok = si[1];
+
+                    String part2;
+
+                    guardapreferencias(idok);//Este metodo lo agregamos aquí ya que se guardaran los datos unicamente cuando el Email y Contraseña existan usando este método.
+
+                    Log.d("cadena", idok = si[1]);
+                    Log.d("cadena", part2 = parts[1]);
+
+
 
                     Intent intent = new Intent(getApplicationContext(),Drawer_principal.class);
                     startActivity(intent);
@@ -142,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Creamos un nuevo método que nos ayudará a guardar el usuario y contraseña para que el usuario final no se tenga que estar loggeando.
-    private void guardapreferencias(){
+    private void guardapreferencias(String idok){
+
 
         //Creamos una nuevo objeto con el constructor getSharedPreferences al cual le pasaremos por parámetro el nombre de las preferencias y el modo de acceso de estas.
         SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
@@ -153,6 +169,8 @@ public class MainActivity extends AppCompatActivity {
         //A continuación mediante el put string agregamos el usuario y contraseña y el valor que se guardará en cada uno.
         editor.putString("E_Mail",E_Mail);
         editor.putString("Contraseña",Contraseña);
+
+        editor.putString("idok",idok);
 
         editor.putBoolean("sesion",true); //Esta la utilizaremos más adelante para guardar la sesión en caso de ser correcto.
 
