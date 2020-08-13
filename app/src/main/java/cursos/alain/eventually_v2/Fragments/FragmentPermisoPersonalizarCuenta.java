@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import cursos.alain.eventually_v2.PersonalizarDatosUsuario;
 import cursos.alain.eventually_v2.R;
 
 public class FragmentPermisoPersonalizarCuenta extends Fragment {
@@ -23,7 +24,7 @@ public class FragmentPermisoPersonalizarCuenta extends Fragment {
         Bnt_personalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Siguiente=new Intent(getContext(), ValidacionPersonalizaCuente.class);
+                Intent Siguiente=new Intent(getContext(), PersonalizarDatosUsuario.class);
                 startActivity(Siguiente);
             }
         });
