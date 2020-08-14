@@ -20,9 +20,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 import cursos.alain.eventually_v2.Adapters.AdapterGrupos;
+import cursos.alain.eventually_v2.CreacionGrupo;
 import cursos.alain.eventually_v2.R;
 import cursos.alain.eventually_v2.entidades.Grupos;
 import cursos.alain.eventually_v2.iComunicaFragments;
+import cursos.alain.eventually_v2.registros_admin;
 
 public class FragmentGrupos extends Fragment {
 
@@ -53,7 +55,8 @@ public class FragmentGrupos extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"PLEASE-MASTER",Toast.LENGTH_SHORT).show();
+                Intent siguiente = new Intent(getContext(), CreacionGrupo.class);
+                startActivity(siguiente);
             }
         });
 
