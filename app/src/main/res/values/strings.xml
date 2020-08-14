@@ -51,5 +51,14 @@
     <string name="ingrese_el_id_usuario">Ingrese el id Usuario</string>
     <string name="username">UserName</string>
     <string name="apellido">Apellido</string>
+    <string name="crea_un_grupo">Crea un grupo!</string>
+    <string name="nombre_del_grupo">Nombre del grupo</string>
+    <string name="edad">Edad</string>
+    <string name="edad_minima">Edad minima</string>
+    <string name="restricci_n_de_genero">Restricción de Genero</string>
+    <string name="ingrese_la_descripcion_del_grupo">Ingrese la descripcion del grupo</string>
+    <string name="maximo_de_integrantes">Maximo de integrantes</string>
+    <string name="etiqueta_del_grupo">Etiqueta del grupo</string>
+    <string name="crear">Crear</string>
 
 </resources>

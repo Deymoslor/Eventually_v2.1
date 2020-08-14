@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreacionGrupo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:text="@string/crea_un_grupo"
+        android:textSize="25sp"
+        android:textStyle="bold">
+    </TextView>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:hint="@string/nombre_del_grupo">
+    </EditText>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:hint="@string/edad_minima">
+    </EditText>
+        <AutoCompleteTextView
+            android:id="@+id/AcEt_genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:hint="@string/restricci_n_de_genero"
+            android:completionThreshold="1">
+        </AutoCompleteTextView>
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:gravity="start|top"
+        android:textSize="20sp"
+        android:hint="@string/ingrese_la_descripcion_del_grupo"
+        android:inputType="textMultiLine" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:hint="@string/maximo_de_integrantes">
+    </EditText>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:hint="@string/etiqueta_del_grupo">
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/crear"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp">
+    </Button>
+
+</LinearLayout>
