@@ -31,7 +31,9 @@ public class Presentacion extends AppCompatActivity {
 
                 //Recuperamos las preferencias con la sesión que habíamos guardado, validando así si hay una sesión guardada o no.
                 SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
-                boolean sesion = preferences.getBoolean("sesion",false);
+                boolean sesion = preferences.getBoolean("sesion",false); /*En esta línea de código le estamos diciendo básicamente que retome la
+                                                                         información de el campo sesión dentro de las preferencias que se llaman preferences*/
+
                 if (sesion){ //Mediante esta condicion evaluamos si es verdadera y por lo tanto que le envie a la actividad principal.
 
                     Intent intent = new Intent(getApplicationContext(),Drawer_principal.class);
