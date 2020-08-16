@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 //Evaluamos si algúno de los campos de el login están vacíos.
                 if (!E_Mail.isEmpty() || !Contraseña.isEmpty()){
 
-                    validarCliente("http://192.168.1.69/Eventually_01/Validar_Usuario.php");
-                    //validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
+                    //validarCliente("http://192.168.1.69/Eventually_01/Validar_Usuario.php");
+                    validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
 
                 }else{
 
@@ -77,20 +77,20 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!response.isEmpty()) { //Codicional que nos permite evaluar si nuestro response está vacío.
 
-                    Log.d("cadena", response);
+                    Log.d("cadena", response); //Escribe en el run la respuesta.
 
-                    String[] parts = response.split(",");
+                    //Este código nos servirá para guardar el autoincrement que posee el registro actual.
+                    String[] parts = response.split(","); //Creamos un array de tipo string llamado "parts" en el cual dividimos todos los datos mediante ",".
 
-                    String[] si = parts[0].split(":");
-                    String idok = si[1];
+                    String[] si = parts[0].split(":"); //Creamos un array llamado "si" en el cual almacenamos lo que había en la posición 0 del array "parts" y lo separamos ahora por ":".
+                    String idok = si[1]; //Creamos una variable de tipo string llamada idok en la cual almacenamos la posición 1 del array "si" que poseerá el id.
 
-                    String part2;
+                    String part2; //Creamos una variable de tipo string llamada part2.
 
-                    guardapreferencias(idok);//Este metodo lo agregamos aquí ya que se guardaran los datos unicamente cuando el Email y Contraseña existan usando este método.
+                    guardapreferencias(idok);//Este metodo creado previamente, loagregamos aquí, ya que se guardará el id únicamente cuando el Email y Contraseña existan.
 
-                    Log.d("cadena", idok = si[1]);
-                    Log.d("cadena", part2 = parts[1]);
-
+                    Log.d("cadena", idok = si[1]); //Comprobamos que sea el Id desde el run.
+                    Log.d("cadena", part2 = parts[1]); //Experimentación.
 
 
                     Intent intent = new Intent(getApplicationContext(),Drawer_principal.class);
@@ -163,14 +163,14 @@ public class MainActivity extends AppCompatActivity {
         //Creamos una nuevo objeto con el constructor getSharedPreferences al cual le pasaremos por parámetro el nombre de las preferencias y el modo de acceso de estas.
         SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
 
-        //Definimos que lo que queremos hacer es guardar o actualizar datos en la preferencia.
+        //Mediante esta linea de código estamos definiendo que lo que queremos hacer es guardar o actualizar datos en la preferencia.
         SharedPreferences.Editor editor = preferences.edit();
 
         //A continuación mediante el put string agregamos el usuario y contraseña y el valor que se guardará en cada uno.
         editor.putString("E_Mail",E_Mail);
         editor.putString("Contraseña",Contraseña);
 
-        editor.putString("idok",idok);
+        editor.putString("idok",idok); //En este guardamos el id.
 
         editor.putBoolean("sesion",true); //Esta la utilizaremos más adelante para guardar la sesión en caso de ser correcto.
 
