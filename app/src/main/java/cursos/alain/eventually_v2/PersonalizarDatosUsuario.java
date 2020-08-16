@@ -52,7 +52,8 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarAdicionUsuario("http://192.168.1.69/Eventually_01/Adicion_Usuario.php");
+                //ejecutarAdicionUsuario("http://192.168.1.69/Eventually_01/Adicion_Usuario.php");
+                ejecutarAdicionUsuario("http://192.168.1.65/Eventually_01/Adicion_Usuario.php");
                 //ejecutarAdicionUsuario("http://192.168.1.56/Eventually_01/Adicion_Usuario.php");
             }
         });
