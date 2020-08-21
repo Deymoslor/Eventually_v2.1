@@ -121,4 +121,6 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+
 }
