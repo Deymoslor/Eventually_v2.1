@@ -2,7 +2,10 @@ package cursos.alain.eventually_v2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -28,12 +31,15 @@ public class CreacionGrupo extends AppCompatActivity {
 
     EditText Txt_Nombre_Grupo, Txt_Edad, Txt_Genero, Txt_Descripcion, Txt_Integrantes, Txt_Etiquetas;
     Button Btn_Crear;
+    String IdActualizar;
     RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creacion_grupo);
+
+        recuperarId();
 
         //Ubicación de todos los controles.
         Txt_Nombre_Grupo = (EditText) findViewById(R.id.Txt_Nombre_Grupo);
@@ -44,11 +50,13 @@ public class CreacionGrupo extends AppCompatActivity {
         Txt_Etiquetas = (EditText) findViewById(R.id.Txt_Etiquetas);
         Btn_Crear = (Button) findViewById(R.id.Btn_Crear);
 
+
         Btn_Crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Ejecutar_Llenado_Grupo("http://192.168.1.56/Eventually_01/Registrar_Grupo.php");
+                Ejecutar_Llenado_Grupo("http://192.168.1.66/Eventually_01/Registrar_Grupo.php");
+                //Ejecutar_Llenado_Grupo("http://192.168.1.56/Eventually_01/Registrar_Grupo.php");
 
             }
         });
@@ -72,6 +80,12 @@ public class CreacionGrupo extends AppCompatActivity {
                 Txt_Descripcion.setText("");
                 Txt_Integrantes.setText("");
                 Txt_Etiquetas.setText("");
+
+                if (!response.isEmpty()) { //Codicional que nos permite evaluar si nuestro response está vacío.
+
+                    Log.d("cadena", response); //Escribe en el run la respuesta.
+
+                }
             }
         }, new Response.ErrorListener() {
             @Override
@@ -94,6 +108,7 @@ public class CreacionGrupo extends AppCompatActivity {
                 parametros.put("Descripción_Grupo",Txt_Descripcion.getText().toString());
                 parametros.put("Maximos_Integrantes",Txt_Integrantes.getText().toString());
                 parametros.put("Etiquetas",Txt_Etiquetas.getText().toString());
+                parametros.put("idok",IdActualizar);
 
 
                 return parametros;
@@ -103,6 +118,11 @@ public class CreacionGrupo extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); //Aquí enviamos la solicitud agregando el objeto string request.
 
+    }
+
+    private void recuperarId(){
+        SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
+        IdActualizar =preferences.getString("idok", "");
     }
 
 }

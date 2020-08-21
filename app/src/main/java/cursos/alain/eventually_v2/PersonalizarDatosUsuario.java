@@ -3,6 +3,7 @@ package cursos.alain.eventually_v2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,8 +53,8 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //ejecutarAdicionUsuario("http://192.168.1.69/Eventually_01/Adicion_Usuario.php");
-                ejecutarAdicionUsuario("http://192.168.1.65/Eventually_01/Adicion_Usuario.php");
+                ejecutarAdicionUsuario("http://192.168.1.66/Eventually_01/Adicion_Usuario.php");
+                //ejecutarAdicionUsuario("http://192.168.1.65/Eventually_01/Adicion_Usuario.php");
                 //ejecutarAdicionUsuario("http://192.168.1.56/Eventually_01/Adicion_Usuario.php");
             }
         });
@@ -75,7 +76,7 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
                 TxtApellido.setText("");
                 TxtNombre.setText("");
 
-                Log.d("cadena", response);
+
 
 
             }
