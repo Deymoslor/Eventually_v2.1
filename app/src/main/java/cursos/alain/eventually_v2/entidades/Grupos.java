@@ -2,17 +2,11 @@ package cursos.alain.eventually_v2.entidades;
 
 import java.io.Serializable;
 
-public class Grupos implements Serializable {
-    private String nombre, intereses;
+public class Grupos  {
+    private String nombre, etiqueta, descripcion;
     private int imagenid;
 
-    public Grupos (){}
 
-    public Grupos(String nombre, String intereses, int imagenid) {
-        this.nombre = nombre;
-        this.intereses = intereses;
-        this.imagenid = imagenid;
-    }
 
     public String getNombre() {
         return nombre;
@@ -22,19 +16,20 @@ public class Grupos implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getIntereses() {
-        return intereses;
+    public String getEtiqueta() {
+        return etiqueta;
     }
 
-    public void setIntereses(String intereses) {
-        this.intereses = intereses;
+    public void setEtiqueta(String etiqueta) {
+        this.etiqueta = etiqueta;
     }
 
-    public int getImagenid() {
-        return imagenid;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setImagenid(int imagenid) {
-        this.imagenid = imagenid;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+
 }

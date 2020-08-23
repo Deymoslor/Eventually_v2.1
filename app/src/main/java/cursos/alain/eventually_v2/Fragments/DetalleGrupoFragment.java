@@ -31,7 +31,7 @@ public class DetalleGrupoFragment extends Fragment {
             grupos = (Grupos) objetoGrupo.getSerializable("objeto");
             //Establecer los datos en las vistas
             nombreDetalle.setText(grupos.getNombre());
-            imagenDetalle.setImageResource(grupos.getImagenid());
+
         }
         return view;
     }

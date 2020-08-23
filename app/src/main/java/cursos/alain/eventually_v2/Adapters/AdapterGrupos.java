@@ -11,66 +11,52 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cursos.alain.eventually_v2.R;
 import cursos.alain.eventually_v2.entidades.Grupos;
 
-public class AdapterGrupos extends RecyclerView.Adapter<AdapterGrupos.ViewHolder> implements View.OnClickListener {
+public class AdapterGrupos extends RecyclerView.Adapter<AdapterGrupos.GruposHolder> {
+    List<Grupos> listaGrupos;
 
-    ArrayList<Grupos> model;
-    LayoutInflater inflater;
-
-    //listener
-    private View.OnClickListener listener;
-
-    public AdapterGrupos(Context context, ArrayList<Grupos> model){
-        this.inflater = LayoutInflater.from(context);
-        this.model = model;
-
+    public AdapterGrupos(List<Grupos> listaGrupos) {
+        this.listaGrupos = listaGrupos;
     }
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.lista_grupos, parent, false);
-        view.setOnClickListener(this);
-        return new ViewHolder(view);
-    }
-
-    public void setOnclickListener(View.OnClickListener listener){
-        this.listener = listener;
+    public GruposHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_grupos,parent,false);
+        RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        vista.setLayoutParams(layoutParams);
+        return new GruposHolder(vista);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String nombre = model.get(position).getNombre();
-        String intereses = model.get(position).getIntereses();
-        int imagen = model.get(position).getImagenid();
-        holder.nombres.setText(nombre);
-        holder.intereses.setText(intereses);
-        holder.imagen.setImageResource(imagen);
+    public void onBindViewHolder(@NonNull GruposHolder holder, int position) {
+        holder.TxtNombreGrupo.setText(listaGrupos.get(position).getNombre().toString());
+        holder.TxtEtiquetas.setText(listaGrupos.get(position).getEtiqueta().toString());
+        holder.TxtDescripcion.setText(listaGrupos.get(position).getDescripcion().toString());
     }
 
     @Override
     public int getItemCount() {
-        return model.size();
+        return 0;
     }
 
-    @Override
-    public void onClick(View view) {
-        if(listener != null){
-            listener.onClick(view);
-        }
-    }
 
-    public  class ViewHolder extends RecyclerView.ViewHolder{
-        TextView nombres,intereses;
-        ImageView imagen;
 
-        public ViewHolder(@NonNull View itemView) {
+    public class GruposHolder extends RecyclerView.ViewHolder {
+
+        TextView TxtNombreGrupo,TxtEtiquetas,TxtDescripcion;
+
+        public GruposHolder(@NonNull View itemView) {
             super(itemView);
-            nombres = itemView.findViewById(R.id.nombre_grupo);
-            intereses = itemView.findViewById(R.id.intereses);
-            imagen = itemView.findViewById(R.id.imagen_grupo);
+
+            TxtNombreGrupo = (TextView) itemView.findViewById(R.id.Txt_Documento);
+            TxtEtiquetas = (TextView) itemView.findViewById(R.id.Txt_Etiquetas);
+            TxtDescripcion = (TextView) itemView.findViewById(R.id.Txt_Descripcion);
         }
     }
 }

@@ -6,13 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
@@ -22,11 +17,10 @@ import com.google.android.material.navigation.NavigationView;
 
 import cursos.alain.eventually_v2.Fragments.DetalleGrupoFragment;
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
-import cursos.alain.eventually_v2.Fragments.FragmentGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentIntereses;
 import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
-import cursos.alain.eventually_v2.Fragments.FragmentPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
+import cursos.alain.eventually_v2.Fragments.grupos_fragment;
 import cursos.alain.eventually_v2.entidades.Grupos;
 
 public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,iComunicaFragments  {
@@ -79,7 +73,7 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         if(menuItem.getItemId() == R.id.grupos){
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new FragmentGrupos());
+            fragmentTransaction.replace(R.id.container, new grupos_fragment());
             fragmentTransaction.commit();
         }
         if(menuItem.getItemId() == R.id.registros) {
@@ -88,7 +82,7 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
             fragmentTransaction.replace(R.id.container, new FragmentAdmin());
             fragmentTransaction.commit();
         }
-        if(menuItem.getItemId() == R.id.intereses) {
+        if(menuItem.getItemId() == R.id.registros) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container, new FragmentIntereses());
@@ -107,18 +101,8 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
 
     @Override
     public void enviarGrupo(Grupos grupos) {//comunicar ambos fragments.
-        //aqui se realizara la logica para realizar el envio.
-        detalleGrupoFragment = new DetalleGrupoFragment();
-        //objeto de tipo bundle para transportar la informacion.
-        Bundle bundleEnvio = new Bundle();
-        //enviar el objeto que esta llegando con serializable.
-        bundleEnvio.putSerializable("objeto", grupos);
-        detalleGrupoFragment.setArguments(bundleEnvio);
-        //abrir fragment
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, detalleGrupoFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+
     }
+
+
 }
