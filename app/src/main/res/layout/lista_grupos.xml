@@ -1,45 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="3dp"
-    app:cardUseCompatPadding="true">
-    <RelativeLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.MisGruposFragment">
+    
+    <LinearLayout
+        android:layout_marginTop="55dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
-        <ImageView
-            android:id="@+id/imagen_grupo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@mipmap/logoxd_foreground">
-        </ImageView>
+        android:orientation="horizontal">
+
         <TextView
-            android:id="@+id/nombre_grupo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre del grupo"
-            android:textSize="20sp"
+            android:text="@string/nombre_grupo"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:layout_toRightOf="@id/imagen_grupo"
-            android:layout_toEndOf="@+id/imagen_grupo"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
+            android:layout_weight="2">
         </TextView>
         <TextView
-            android:id="@+id/intereses"
-            android:layout_width="wrap_content"
+            android:id="@+id/Txt_Nombre_Grupo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="diferentes intereses"
+            android:text="@string/nombre_grupos"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:layout_below="@+id/nombre_grupo"
-            android:layout_toRightOf="@+id/imagen_grupo"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
+            android:layout_weight=".8">
         </TextView>
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/etiqueta"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight="2">
+        </TextView>
+        <TextView
+            android:id="@+id/Txt_Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/etiquetas"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight=".8">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/descripcion"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight="2">
+        </TextView>
+        <TextView
+            android:id="@+id/Txt_Descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/descripcion_grupos"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_weight=".8">
+        </TextView>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+    </TextView>
+
+</LinearLayout>

@@ -36,7 +36,6 @@
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
     <string name="detalle_grupo">Detalle Grupo</string>
-    <string name="nombre_grupo">Nombre Grupo: </string>
     <string name="mi_cuenta">Mi cuenta</string>
     <string name="mis_grupos">Mis grupos</string>
     <string name="intereses">Intereses</string>
@@ -60,5 +59,11 @@
     <string name="maximo_de_integrantes">Maximo de integrantes</string>
     <string name="etiqueta_del_grupo">Etiqueta del grupo</string>
     <string name="crear">Crear</string>
+    <string name="nombre_grupo">Nombre Grupo:</string>
+    <string name="nombre_grupos">Nombre Grupos</string>
+    <string name="etiqueta">Etiqueta:</string>
+    <string name="etiquetas">Etiquetas</string>
+    <string name="descripcion">Descripcion:</string>
+    <string name="descripcion_grupos">Descripcion_Grupos</string>
 
 </resources>
