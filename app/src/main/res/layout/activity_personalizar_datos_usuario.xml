@@ -55,14 +55,14 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_gravity="center">
-            <EditText
-                android:id="@+id/Txt_Edad"
+            <TextView
+                android:id="@+id/Txt_FechaNacimiento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Edad"
+                android:hint="@string/fecha_de_nacimiento"
                 android:textSize="25sp"
-                android:inputType="number">
-            </EditText>
+                android:focusable="false">
+            </TextView>
             <EditText
                 android:id="@+id/TxtCelular"
                 android:layout_width="wrap_content"
@@ -72,36 +72,7 @@
                 android:inputType="phone">
             </EditText>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            >
-            <EditText
-                android:id="@+id/Txt_Etiqueta1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Etiqueta 1"
-                android:textSize="25sp">
-            </EditText>
-            <EditText
-                android:id="@+id/Txt_Etiqueta2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Etiqueta 2"
-                android:textSize="25sp">
-            </EditText>
-            <EditText
-                android:id="@+id/Txt_Etiqueta3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Etiqueta 3"
-                android:textSize="25sp">
-            </EditText>
 
-        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
