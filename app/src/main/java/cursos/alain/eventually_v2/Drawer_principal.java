@@ -15,13 +15,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
-import cursos.alain.eventually_v2.Fragments.DetalleGrupoFragment;
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.Fragments.MisGruposFragment;
 
-public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,iComunicaFragments  {
+public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -33,7 +32,6 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
     FragmentTransaction fragmentTransaction;
 
     //Variable del fragmentdetalle Grupo
-    DetalleGrupoFragment detalleGrupoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,22 +89,7 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         return false;
     }
 
-    @Override
-    public void enviarGrupo(Grupos grupos) {//comunicar ambos fragments.
-        //aqui se realizara la logica para realizar el envio.
-        detalleGrupoFragment = new DetalleGrupoFragment();
-        //objeto de tipo bundle para transportar la informacion.
-        Bundle bundleEnvio = new Bundle();
-        //enviar el objeto que esta llegando con serializable.
-        bundleEnvio.putSerializable("objeto", grupos);
-        detalleGrupoFragment.setArguments(bundleEnvio);
-        //abrir fragment
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, detalleGrupoFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
+
 
 
 }

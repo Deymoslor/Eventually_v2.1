@@ -2,14 +2,21 @@ package cursos.alain.eventually_v2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -20,14 +27,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class PersonalizarDatosUsuario extends AppCompatActivity {
-    EditText TxtDocumento,TxtNombre,TxtApellido,TxtEdad,TxtCelular,TxtEtiqueta1,TxtEtiqueta2,TxtEtiqueta3;
+    EditText TxtDocumento,TxtNombre,TxtApellido,TxtCelular;
     Button Btn_Editar;
-
     String IdActualizar;
+
+    private static final String TAG = "PersonalizarDatosUsuario";
+
+    private TextView mDisplayDate;
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
 
     RequestQueue requestQueue; //Definimos este request aquí ya que varios metodos harán uso del mismo objeto.
 
@@ -37,15 +49,42 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personalizar_datos_usuario);
 
+        mDisplayDate = (TextView) findViewById(R.id.Txt_FechaNacimiento);
+
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(PersonalizarDatosUsuario.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        onDateSetListener,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month +1;
+                Log.d(TAG,"onDataSet: date" + dayOfMonth + "/" + month + "/" + year);
+
+                String date = month + "/" + dayOfMonth + "/" + year;
+                mDisplayDate.setText(date);
+            }
+        };
+
         recuperarId();
 
-        TxtEtiqueta3 = findViewById(R.id.Txt_Etiqueta3);
-        TxtEtiqueta2 = findViewById(R.id.Txt_Etiqueta2);
-        TxtEtiqueta1 = findViewById(R.id.Txt_Etiqueta1);
         TxtDocumento = findViewById(R.id.Txt_Documento);
         TxtNombre = findViewById(R.id.Txt_Nombre);
         TxtApellido = findViewById(R.id.Txt_Apellido);
-        TxtEdad = findViewById(R.id.Txt_Edad);
         TxtCelular = findViewById(R.id.TxtCelular);
         Btn_Editar = findViewById(R.id.Btn_Editar);
 
@@ -58,6 +97,8 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
                 //ejecutarAdicionUsuario("http://192.168.1.56/Eventually_01/Adicion_Usuario.php");
             }
         });
+
+
     }
 
     private void ejecutarAdicionUsuario(String URL){ //Meotodo que enviará las peticiones al servidor.
@@ -67,11 +108,8 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Edición realizada ^^", Toast.LENGTH_SHORT).show();
-                TxtEtiqueta3.setText("");
-                TxtEtiqueta2.setText("");
-                TxtEtiqueta1.setText("");
                 TxtCelular.setText("");
-                TxtEdad.setText("");
+                mDisplayDate.setText("");
                 TxtDocumento.setText("");
                 TxtApellido.setText("");
                 TxtNombre.setText("");
@@ -97,12 +135,9 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
 
                 parametros.put("Nombre",TxtNombre.getText().toString());
                 parametros.put("Apellido",TxtApellido.getText().toString());
-                parametros.put("Edad",TxtEdad.getText().toString());
+                parametros.put("FechaNacimiento",mDisplayDate.getText().toString());
                 parametros.put("Celular",TxtCelular.getText().toString());
                 parametros.put("Documento",TxtDocumento.getText().toString());
-                parametros.put("Etiqueta1",TxtEtiqueta1.getText().toString());
-                parametros.put("Etiqueta2",TxtEtiqueta2.getText().toString());
-                parametros.put("Etiqueta3",TxtEtiqueta3.getText().toString());
                 parametros.put("idok",IdActualizar);
 
 
