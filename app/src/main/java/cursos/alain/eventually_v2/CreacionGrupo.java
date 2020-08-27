@@ -55,8 +55,9 @@ public class CreacionGrupo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Ejecutar_Llenado_Grupo("http://192.168.1.66/Eventually_01/Registrar_Grupo.php");
-                //Ejecutar_Llenado_Grupo("http://192.168.1.56/Eventually_01/Registrar_Grupo.php");
+                Ejecutar_Llenado_Grupo("http:/192.168.1.66/Eventually_01/Registrar_Grupo.php");
+                //Ejecutar_Llenado_Grupo("http://192.168.1.65/Eventually_01/Registrar_Grupo.php");
+                //Ejecutar_Llenado_Grupo("http:/192.168.1.56/Eventually_01/Registrar_Grupo.php");
 
             }
         });
@@ -103,9 +104,9 @@ public class CreacionGrupo extends AppCompatActivity {
                 //Meidante el método put, definimos los datos que vamos a enviar.
 
                 parametros.put("Nombre_Grupo",Txt_Nombre_Grupo.getText().toString());
-                parametros.put("Restricción_Edad",Txt_Edad.getText().toString());
-                parametros.put("Restricción_Genero",Txt_Genero.getText().toString());
-                parametros.put("Descripción_Grupo",Txt_Descripcion.getText().toString());
+                parametros.put("Restriccion_Edad",Txt_Edad.getText().toString());
+                parametros.put("Restriccion_Genero",Txt_Genero.getText().toString());
+                parametros.put("Descripcion_Grupo",Txt_Descripcion.getText().toString());
                 parametros.put("Maximos_Integrantes",Txt_Integrantes.getText().toString());
                 parametros.put("Etiquetas",Txt_Etiquetas.getText().toString());
                 parametros.put("idok",IdActualizar);

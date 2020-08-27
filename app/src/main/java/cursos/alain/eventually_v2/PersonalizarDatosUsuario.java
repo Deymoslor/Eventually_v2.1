@@ -49,7 +49,7 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personalizar_datos_usuario);
 
-        mDisplayDate = (TextView) findViewById(R.id.Txt_FechaNacimiento);
+        mDisplayDate = (TextView) findViewById(R.id.Txt_Fecha_Nacimiento);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,16 +85,16 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
         TxtDocumento = findViewById(R.id.Txt_Documento);
         TxtNombre = findViewById(R.id.Txt_Nombre);
         TxtApellido = findViewById(R.id.Txt_Apellido);
-        TxtCelular = findViewById(R.id.TxtCelular);
+        TxtCelular = findViewById(R.id.Txt_Celular);
         Btn_Editar = findViewById(R.id.Btn_Editar);
 
         Btn_Editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ejecutarAdicionUsuario("http://192.168.1.66/Eventually_01/Adicion_Usuario.php");
+                //ejecutarAdicionUsuario("http://192.168.1.66/Eventually_01/Adicion_Usuario.php");
                 //ejecutarAdicionUsuario("http://192.168.1.65/Eventually_01/Adicion_Usuario.php");
-                //ejecutarAdicionUsuario("http://192.168.1.56/Eventually_01/Adicion_Usuario.php");
+                ejecutarAdicionUsuario("http://192.168.1.56/Eventually_01/Adicion_Usuario.php");
             }
         });
 
@@ -135,7 +135,7 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
 
                 parametros.put("Nombre",TxtNombre.getText().toString());
                 parametros.put("Apellido",TxtApellido.getText().toString());
-                parametros.put("FechaNacimiento",mDisplayDate.getText().toString());
+                parametros.put("Fecha_Nacimiento",mDisplayDate.getText().toString());
                 parametros.put("Celular",TxtCelular.getText().toString());
                 parametros.put("Documento",TxtDocumento.getText().toString());
                 parametros.put("idok",IdActualizar);
