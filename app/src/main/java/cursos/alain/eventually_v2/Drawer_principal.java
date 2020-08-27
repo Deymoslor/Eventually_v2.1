@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,8 +20,9 @@ import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.Fragments.MisGruposFragment;
+import cursos.alain.eventually_v2.interfaces.iComunicaFragments;
 
-public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -56,6 +58,8 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         fragmentTransaction.commit();
     }
 
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         //En este metodo se programan los eventos onclick del drawer
@@ -90,6 +94,19 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
     }
 
 
+    @Override
+    public void iniciarMisgrupos() {
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, new MisGruposFragment());
+        fragmentTransaction.commit();
+    }
 
-
+    @Override
+    public void iniciarPerfil() {
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, new FragmentPermisoPersonalizarCuenta());
+        fragmentTransaction.commit();
+    }
 }

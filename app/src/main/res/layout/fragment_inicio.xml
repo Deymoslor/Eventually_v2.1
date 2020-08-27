@@ -163,7 +163,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Micuenta"
+                android:id="@+id/perfil"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -182,6 +182,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/peril"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_gravity="center_horizontal"
