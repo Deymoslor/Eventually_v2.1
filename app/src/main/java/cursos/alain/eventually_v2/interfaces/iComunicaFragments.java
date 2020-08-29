@@ -4,4 +4,5 @@ public interface iComunicaFragments {
 
     public void iniciarMisgrupos();
     public void iniciarPerfil();
+    public void iniciarBuscarGrupos();
 }

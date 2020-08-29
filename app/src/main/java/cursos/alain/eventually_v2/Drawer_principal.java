@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.navigation.NavigationView;
 
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
+import cursos.alain.eventually_v2.Fragments.FragmentBuscarGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.Fragments.MisGruposFragment;
@@ -88,6 +89,12 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
             fragmentTransaction.replace(R.id.container, new FragmentPermisoPersonalizarCuenta());
             fragmentTransaction.commit();
         }
+        if(menuItem.getItemId() == R.id.Buscargrupos) {
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, new FragmentBuscarGrupos());
+            fragmentTransaction.commit();
+        }
 
 
         return false;
@@ -107,6 +114,13 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, new FragmentPermisoPersonalizarCuenta());
+        fragmentTransaction.commit();
+    }
+
+    public void iniciarBuscarGrupos() {
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, new FragmentBuscarGrupos());
         fragmentTransaction.commit();
     }
 }

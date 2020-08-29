@@ -13,6 +13,11 @@
                 android:icon="@drawable/ic_group"
                 android:title="@string/mis_grupos">
             </item>
+            <item
+                android:id="@+id/Buscargrupos"
+                android:icon="@drawable/ic_group"
+                android:title="@string/buscar_grupos">
+            </item>
         </menu>
 
     </item>
