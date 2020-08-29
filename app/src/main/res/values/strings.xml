@@ -66,5 +66,6 @@
     <string name="descripcion">Descripcion:</string>
     <string name="descripcion_grupos">Descripcion_Grupos</string>
     <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="buscar_grupos">Buscar Grupos</string>
 
 </resources>
