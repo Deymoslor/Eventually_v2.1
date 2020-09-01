@@ -125,7 +125,8 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
         progress.setMessage("Consultando...");
         progress.show();
 
-        String url = "http://192.168.1.66/Eventually_01/Consultar_Grupos.php";
+        //String url = "http://192.168.1.66/Eventually_01/Consultar_Grupos.php";
+        String url = "http://192.168.1.56/Eventually_01/Consultar_Grupos.php";
 
         jsonObjectRequest = new  JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
@@ -143,7 +144,6 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
     public void onResponse(JSONObject response) {
         Grupos1 grupos1 = null;
 
-
         try {
             JSONArray json = response.optJSONArray("grupo");
 
@@ -154,7 +154,7 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
 
                 grupos1.setNombre_Grupo(jsonObject.optString("Nombre_Grupo"));
                 grupos1.setEtiqueta(jsonObject.optString("Etiquetas"));
-                grupos1.setDescripcion(jsonObject.optString("Descripción"));
+                grupos1.setDescripcion(jsonObject.optString("Descripcion_Grupo"));
                 listaGrupos.add(grupos1);
             }
             progress.hide();
