@@ -1,7 +1,5 @@
 package cursos.alain.eventually_v2.entidades;
 
-
-
 public class Grupos1{
 
     private String Nombre_Grupo;
