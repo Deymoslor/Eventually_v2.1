@@ -16,14 +16,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
+import cursos.alain.eventually_v2.Fragments.DetalleBuscarGrupoFragment;
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentBuscarGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.Fragments.MisGruposFragment;
+import cursos.alain.eventually_v2.entidades.Buscar_Grupos;
 import cursos.alain.eventually_v2.interfaces.iComunicaFragments;
 
 public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
+
+    DetalleBuscarGrupoFragment detalleBuscarGrupoFragment;
+
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -122,5 +127,18 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, new FragmentBuscarGrupos());
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void enviarEtiqueta(Buscar_Grupos buscar_grupos) {
+        detalleBuscarGrupoFragment = new DetalleBuscarGrupoFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objeto",buscar_grupos);
+        detalleBuscarGrupoFragment.setArguments(bundle);
+
+        //cargar el fragment en el activity
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.container, detalleBuscarGrupoFragment).addToBackStack(null).commit();
     }
 }
