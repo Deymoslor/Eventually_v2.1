@@ -125,8 +125,9 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
         progress.setMessage("Consultando...");
         progress.show();
 
+        String url = "https://eventually02.000webhostapp.com/consultar_grupos.php";
         //String url = "http://192.168.1.66/Eventually_01/Consultar_Grupos.php";
-        String url = "http://192.168.1.56/Eventually_01/Consultar_Grupos.php";
+        //String url = "http://192.168.1.56/Eventually_01/Consultar_Grupos.php";
 
         jsonObjectRequest = new  JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);

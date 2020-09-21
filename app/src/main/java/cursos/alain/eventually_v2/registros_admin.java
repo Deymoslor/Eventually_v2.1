@@ -56,7 +56,10 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                buscarCliente("http://192.168.1.66/Eventually_01/Buscar_Usuarios.php?Id_Usuario="+Txt_Id_Usuario.getText()+"");
+
+                buscarCliente("https://eventually02.000webhostapp.com/buscar_usuarios.php?Id_Usuario="+Txt_Id_Usuario.getText()+"");
+
+                //buscarCliente("http://192.168.1.67/Eventually_01/Buscar_Usuarios.php?Id_Usuario="+Txt_Id_Usuario.getText()+"");
                 //buscarCliente("http://192.168.1.65/Eventually_01/Buscar_Usuarios.php?Id_Usuario="+Txt_Id_Usuario.getText()+"");
                 //buscarCliente("http://192.168.1.56/Eventually_01/Buscar_Usuarios.php?Documento="+Txt_Id_Usuario.getText()+"");
 
@@ -67,9 +70,11 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicio("http:/192.168.1.66/Eventually_01/Editar_Usuario.php");
+                ejecutarServicio("https://eventually02.000webhostapp.com/editar_usuario.php");
+
+                //ejecutarServicio("http://192.168.1.66/Eventually_01/Editar_Usuario.php");
                 //ejecutarServicio("http://192.168.1.65/Eventually_01/Editar_Usuario.php");
-                //ejecutarServicio("http:/192.168.1.56/Eventually_01/Editar_Usuario.php");
+                //ejecutarServicio("http://192.168.1.56/Eventually_01/Editar_Usuario.php");
 
             }
         });
@@ -78,7 +83,9 @@ public class registros_admin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                eliminarCliente("http://192.168.1.66/Eventually_01/Eliminar_Usuario.php");
+                eliminarCliente("https://eventually02.000webhostapp.com/eliminar_usuario.php");
+
+                //eliminarCliente("http://192.168.1.66/Eventually_01/Eliminar_Usuario.php");
                 //eliminarCliente("http://192.168.1.65/Eventually_01/Eliminar_Usuario.php");
                 //eliminarCliente("http://192.168.1.56/Eventually_01/Eliminar_Usuario.php");
 
@@ -168,7 +175,7 @@ public class registros_admin extends AppCompatActivity {
                 //Meidante el método put, definimos los datos que vamos a enviar.
                 parametros.put("Id_Usuario",Txt_Id_Usuario.getText().toString());
                 parametros.put("UserName",Txt_UserName.getText().toString());
-                parametros.put("E_mail",Txt_Email.getText().toString());
+                parametros.put("E_Mail",Txt_Email.getText().toString());
                 parametros.put("Contraseña",Txt_Contra.getText().toString());
                 parametros.put("Confirmar_Contraseña",Txt_Contra_c.getText().toString());
 

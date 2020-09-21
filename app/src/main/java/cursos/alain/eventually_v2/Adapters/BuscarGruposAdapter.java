@@ -1,5 +1,6 @@
 package cursos.alain.eventually_v2.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +13,15 @@ import java.util.List;
 
 import cursos.alain.eventually_v2.R;
 import cursos.alain.eventually_v2.entidades.Buscar_Grupos;
-import cursos.alain.eventually_v2.entidades.Grupos1;
 
-public class BuscarGruposAdapter extends RecyclerView.Adapter<BuscarGruposAdapter.BuscarGruposHolder> {
+public class BuscarGruposAdapter extends RecyclerView.Adapter<BuscarGruposAdapter.BuscarGruposHolder> implements View.OnClickListener {
 
     List<Buscar_Grupos> listaGrupos;
+    private View.OnClickListener listener;
 
-    public BuscarGruposAdapter(List<Buscar_Grupos>listaGrupos){
+
+
+    public BuscarGruposAdapter(List<Buscar_Grupos> listaGrupos){
         this.listaGrupos = listaGrupos;
 
     }
@@ -27,21 +30,35 @@ public class BuscarGruposAdapter extends RecyclerView.Adapter<BuscarGruposAdapte
     @Override
     public BuscarGruposHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_buscargrupos,parent,false);
+        vista.setOnClickListener(this);
         RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         vista.setLayoutParams(layoutParams);
         return new BuscarGruposHolder(vista);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull BuscarGruposHolder holder, int position) {
 
-        holder.Txt_Etiquetas_Grupos.setText(listaGrupos.get(position).getEtiqueta().toString());
 
+
+            holder.Txt_Etiquetas_Grupos.setText(listaGrupos.get(position).getEtiqueta().toString());
     }
 
     @Override
     public int getItemCount() {
         return listaGrupos.size();
+    }
+
+    public void setOnclickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(listener != null){
+            listener.onClick(v);
+        }
     }
 
     public class BuscarGruposHolder extends RecyclerView.ViewHolder{
