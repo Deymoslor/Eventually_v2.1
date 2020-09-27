@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:backgroundTint="@color/colorBoton_Prueba1"
-                android:text="@string/Cancelar"
+                android:text="@string/volver"
                 android:textColor="@color/colorAzul_Sutil"
                 android:onClick="Login"/>
         </LinearLayout>

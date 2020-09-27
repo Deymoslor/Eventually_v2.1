@@ -126,8 +126,8 @@ public class FragmentBuscarGrupos extends Fragment implements Response.Listener<
         progress.setMessage("Consultando. . .");
         progress.show();
 
-        String url = "https://eventually02.000webhostapp.com/buscar_grupo.php ";
-        //String url = "http://192.168.1.67/Eventually_01/Buscar_Grupo.php";
+        //String url = "https://eventually02.000webhostapp.com/buscar_grupo.php ";
+        String url = "http://192.168.1.67/Eventually_01/Buscar_Grupo.php";
 
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);

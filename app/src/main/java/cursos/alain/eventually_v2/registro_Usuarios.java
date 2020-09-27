@@ -3,6 +3,7 @@ package cursos.alain.eventually_v2;
         import androidx.appcompat.app.AppCompatActivity;
         import android.content.Intent;
         import android.os.Bundle;
+        import android.util.Log;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
@@ -43,8 +44,8 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarServicio("https://eventually02.000webhostapp.com/registrar_usuario.php");
-                //ejecutarServicio("http://192.168.1.67/Eventually_01/Registrar_Usuario.php");
+                //ejecutarServicio("https://eventually02.000webhostapp.com/registrar_usuario.php");
+                ejecutarServicio("http://192.168.1.67/Eventually_01/Registrar_Usuario.php");
                 //ejecutarServicio("http://192.168.1.65/Eventually_01/Registrar_Usuario.php");
                 //ejecutarServicio("http://192.168.1.56/Eventually_01/Registrar_Usuario.php");
 
@@ -63,7 +64,7 @@ public class registro_Usuarios extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Registrado exitosamente ^^", Toast.LENGTH_SHORT).show();
-
+                Log.d("cadena", response);
                 Txt_UserName.setText("");
                 Txt_Email.setText("");
                 Txt_Contra.setText("");
@@ -91,8 +92,15 @@ public class registro_Usuarios extends AppCompatActivity {
                 parametros.put("Confirmar_Contraseña", Txt_Contra_c.getText().toString());
 
                 return parametros;
+
             }
         };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 4,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         //Aquí procesaremos las peticiones hechas por nuestra app para que la libreria se encargue de ejecutarlas.
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); //Aquí enviamos la solicitud agregando el objeto string request.
