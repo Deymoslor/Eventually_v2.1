@@ -92,9 +92,9 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ejecutarAdicionUsuario("https://eventually02.000webhostapp.com/adicion_usuario.php");
+                //ejecutarAdicionUsuario("https://eventually02.000webhostapp.com/adicion_usuario.php");
 
-                //ejecutarAdicionUsuario("http://192.168.1.66/Eventually_01/Adicion_Usuario.php");
+                ejecutarAdicionUsuario("http://192.168.1.67/Eventually_01/Adicion_Usuario.php");
                 //ejecutarAdicionUsuario("http://192.168.1.65/Eventually_01/Adicion_Usuario.php");
                 //ejecutarAdicionUsuario("http://192.168.1.56/Eventually_01/Adicion_Usuario.php");
             }
@@ -139,7 +139,7 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
                 parametros.put("idok",IdActualizar);
 
 
-
+                Log.d(String.valueOf(parametros), "recuperarId: ");
 
                 return parametros;
             }
