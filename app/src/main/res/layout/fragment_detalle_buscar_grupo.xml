@@ -3,16 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragments.DetalleBuscarGrupoFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_marginTop="55dp"
         android:id="@+id/TxtEtiquetadetalle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_gravity="center"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="center|top">
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerdetalleGrupos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

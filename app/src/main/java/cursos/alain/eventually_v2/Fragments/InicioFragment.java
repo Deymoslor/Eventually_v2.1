@@ -33,7 +33,7 @@ public class InicioFragment extends Fragment {
 
     View vista;
     Activity actividad;
-    CardView cardMisGrupos,cardPerfil,cardBuscarGrupos;
+    CardView cardMisGrupos,cardPerfil,cardBuscarGrupos,cardSobremi;
     iComunicaFragments interfaceComunicaFragments;
 
     public InicioFragment() {
@@ -74,6 +74,7 @@ public class InicioFragment extends Fragment {
         cardMisGrupos = vista.findViewById(R.id.MisGrupos);
         cardPerfil =  vista.findViewById(R.id.perfil);
         cardBuscarGrupos = vista.findViewById(R.id.BuscarGrupos);
+        cardSobremi = vista.findViewById(R.id.Sobremiapp);
 
         cardMisGrupos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +96,13 @@ public class InicioFragment extends Fragment {
                 interfaceComunicaFragments.iniciarBuscarGrupos();
             }
         });
+        cardSobremi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                interfaceComunicaFragments.iniciarViewPager();
+            }
+        });
+
 
         // Inflate the layout for this fragment
         return vista;

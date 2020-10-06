@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="55dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.DetalleMisGrupos">
+
+   <ScrollView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/MisGrupos_nombreGrupo"
+               android:layout_marginTop="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="50sp"
+               android:text="@string/default1"
+               android:layout_gravity="center"
+               android:textAlignment="center"
+               android:textStyle="bold">
+           </TextView>
+           <TextView
+               android:id="@+id/MisGrupos_etiqueta"
+               android:layout_marginTop="10dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="25sp"
+               android:text="@string/default1"
+               android:layout_gravity="center"
+               android:textAlignment="center"
+               android:textStyle="italic">
+           </TextView>
+           <LinearLayout
+               android:layout_marginTop="20dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_gravity="center">
+               <Button
+                   android:id="@+id/MisGrupos_btnEvento"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="20dp"
+                   android:text="@string/eventos"
+                   android:textStyle="bold">
+               </Button>
+               <Button
+                   android:id="@+id/MisGrupos_btnParticipantes"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="20dp"
+                   android:text="@string/participantes">
+               </Button>
+           </LinearLayout>
+           <TextView
+               android:id="@+id/MisGrupos_descripcion"
+               android:layout_marginTop="20dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16sp"
+               android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec hendrerit tortor. Quisque sem magna, placerat volutpat lacus quis, pellentesque iaculis quam. Suspendisse malesuada, leo bibendum consequat malesuada, tortor purus efficitur arcu, quis tincidunt enim urna eu mi. Cras dignissim nec dolor in aliquet. Cras fringilla ut eros sed maximus. Suspendisse id eros nec purus fermentum suscipit in id nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum diam lectus, suscipit non rhoncus ac, pulvinar id ligula. Nullam vitae erat in ex congue viverra nec vitae ligula. Curabitur lorem nulla, condimentum nec dolor vitae, convallis mattis justo. Donec viverra vitae lectus non tincidunt. Mauris quis efficitur leo. Nullam fermentum pharetra nisi, a aliquet nulla finibus euismod. Nullam sed pharetra tortor. Integer vulputate pharetra sem, eu lacinia sapien gravida sed."
+               android:layout_gravity="center"
+               android:inputType="textMultiLine">
+           </TextView>
+       </LinearLayout>
+   </ScrollView>
+
+
+
+</LinearLayout>

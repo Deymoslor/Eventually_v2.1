@@ -17,18 +17,20 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.navigation.NavigationView;
 
 import cursos.alain.eventually_v2.Fragments.DetalleBuscarGrupoFragment;
+import cursos.alain.eventually_v2.Fragments.DetalleMisGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentBuscarGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentPermisoPersonalizarCuenta;
 import cursos.alain.eventually_v2.Fragments.InicioFragment;
 import cursos.alain.eventually_v2.Fragments.MisGruposFragment;
 import cursos.alain.eventually_v2.entidades.Buscar_Grupos;
+import cursos.alain.eventually_v2.entidades.Grupos1;
 import cursos.alain.eventually_v2.interfaces.iComunicaFragments;
 
 public class Drawer_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
 
     DetalleBuscarGrupoFragment detalleBuscarGrupoFragment;
-
+    DetalleMisGrupos detalleMisGrupos;
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -130,6 +132,13 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
     }
 
     @Override
+    public void iniciarViewPager() {
+        Intent intent = new Intent(this, ContenedorInstruccionesActivity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
     public void enviarEtiqueta(Buscar_Grupos buscar_grupos) {
         detalleBuscarGrupoFragment = new DetalleBuscarGrupoFragment();
         Bundle bundle = new Bundle();
@@ -140,5 +149,19 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         getSupportFragmentManager().
                 beginTransaction().
                 replace(R.id.container, detalleBuscarGrupoFragment).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void enviarGrupos1(Grupos1 grupos1) {
+    detalleMisGrupos = new DetalleMisGrupos();
+    Bundle bundle = new Bundle();
+    bundle.putSerializable("objeto",grupos1);
+    detalleMisGrupos.setArguments(bundle);
+
+        //cargar el fragment en el activity
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.container, detalleMisGrupos).addToBackStack(null).commit();
+
     }
 }

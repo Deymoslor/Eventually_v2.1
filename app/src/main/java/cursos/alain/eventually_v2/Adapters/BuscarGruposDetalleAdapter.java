@@ -15,42 +15,43 @@ import java.util.List;
 import cursos.alain.eventually_v2.R;
 import cursos.alain.eventually_v2.entidades.Grupos1;
 
-public class GruposAdapter extends RecyclerView.Adapter<GruposAdapter.GruposHolder> implements View.OnClickListener {
+public class BuscarGruposDetalleAdapter extends RecyclerView.Adapter<BuscarGruposDetalleAdapter.BuscarGruposAdapterHolder> implements View.OnClickListener {
 
-    List<Grupos1> listaGrupos;
+    List<Grupos1> listaGrupos2;
 
     private View.OnClickListener listener;
 
-    public GruposAdapter(List<Grupos1> listaGrupos) {
-        this.listaGrupos = listaGrupos;
+    public BuscarGruposDetalleAdapter(List<Grupos1> listaGrupos2) {
+        this.listaGrupos2 = listaGrupos2;
     }
 
+
     @Override
-    public GruposHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_grupos,parent,false);
+    public BuscarGruposAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_grupos_detalle,parent,false);
         vista.setOnClickListener(this);
         RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         vista.setLayoutParams(layoutParams);
-        return new GruposHolder(vista);
+        return new BuscarGruposAdapterHolder(vista);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GruposHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BuscarGruposAdapterHolder holder, int position) {
 
-        holder.TxtNombre_Grupo.setText(listaGrupos.get(position).getNombre_Grupo().toString());
-        holder.TxtEtiqueta.setText(listaGrupos.get(position).getEtiqueta().toString());
-        holder.TxtDescripcion.setText(listaGrupos.get(position).getDescripcion().toString());
+        holder.TxtNombre_Grupo.setText(listaGrupos2.get(position).getNombre_Grupo().toString());
+        holder.TxtEtiqueta.setText(listaGrupos2.get(position).getEtiqueta().toString());
+        holder.TxtDescripcion.setText(listaGrupos2.get(position).getDescripcion().toString());
 
     }
 
     @Override
     public int getItemCount() {
-        if (listaGrupos != null){
-            return listaGrupos.size();
-    }else{
-        return 0;
-    }
+        if (listaGrupos2 != null){
+            return listaGrupos2.size();
+        }else{
+            return 0;
+        }
     }
 
     public void setOnclickListener(View.OnClickListener listener){
@@ -64,11 +65,11 @@ public class GruposAdapter extends RecyclerView.Adapter<GruposAdapter.GruposHold
         }
     }
 
-    public class GruposHolder extends RecyclerView.ViewHolder {
+    public class BuscarGruposAdapterHolder extends RecyclerView.ViewHolder {
 
         TextView TxtNombre_Grupo,TxtEtiqueta,TxtDescripcion;
 
-        public GruposHolder(@NonNull View itemView) {
+        public BuscarGruposAdapterHolder(@NonNull View itemView) {
             super(itemView);
             TxtNombre_Grupo = (TextView) itemView.findViewById(R.id.Txt_Nombre_Grupo);
             TxtEtiqueta = (TextView) itemView.findViewById(R.id.Txt_Etiqueta);
@@ -76,3 +77,4 @@ public class GruposAdapter extends RecyclerView.Adapter<GruposAdapter.GruposHold
         }
     }
 }
+

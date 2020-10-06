@@ -14,15 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CreacionGrupo"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".PersonalizarDatosUsuario"
-            android:screenOrientation="portrait"
-            /> <!-- <activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar. -->
-        <activity android:name=".registros_admin"
-            android:screenOrientation="portrait"
-            />
+        <activity android:name=".ContenedorInstruccionesActivity"></activity>
+        <activity
+            android:name=".CreacionGrupo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PersonalizarDatosUsuario"
+            android:screenOrientation="portrait" /> <!-- <activity android:name=".Presentacion"></activity> Se generó automaticamente, pero no eliminar. -->
+        <activity
+            android:name=".registros_admin"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"

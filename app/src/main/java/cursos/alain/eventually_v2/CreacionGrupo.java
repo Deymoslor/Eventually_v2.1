@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class CreacionGrupo extends AppCompatActivity {
     private static final String[] Generos = new String[]{
-            "Hombre","Mujer","Otro genero"
+            "Masculino","Femenino","Otro genero"
     };
 
     EditText Txt_Nombre_Grupo, Txt_Edad, Txt_Genero, Txt_Descripcion, Txt_Integrantes, Txt_Etiquetas;
@@ -38,7 +38,7 @@ public class CreacionGrupo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creacion_grupo);
-
+        Log.d(IdActualizar, "onCreate: ");
         recuperarId();
 
         //Ubicación de todos los controles.

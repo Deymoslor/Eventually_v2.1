@@ -67,5 +67,10 @@
     <string name="descripcion_grupos">Descripcion_Grupos</string>
     <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
     <string name="buscar_grupos">Buscar Grupos</string>
+    <string name="volver">Volver</string>
+    <string name="default1">Default</string>
+    <string name="participantes">Participantes</string>
+    <string name="eventos">Eventos</string>
+    <string name="title_activity_contenedor_instrucciones">ContenedorInstruccionesActivity</string>
 
 </resources>

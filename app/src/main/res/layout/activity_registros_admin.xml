@@ -8,6 +8,15 @@
     android:orientation="vertical"
     tools:context=".registros_admin">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <TextView
         android:id="@+id/Txt_titulo_admin"
         android:layout_width="match_parent"
@@ -138,6 +147,9 @@
         android:textStyle="bold"
         android:textSize="18sp">
     </Button>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

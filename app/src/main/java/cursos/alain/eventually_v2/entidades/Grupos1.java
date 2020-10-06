@@ -1,6 +1,8 @@
 package cursos.alain.eventually_v2.entidades;
 
-public class Grupos1{
+import java.io.Serializable;
+
+public class Grupos1 implements Serializable {
 
     private String Nombre_Grupo;
     private String Etiqueta;
