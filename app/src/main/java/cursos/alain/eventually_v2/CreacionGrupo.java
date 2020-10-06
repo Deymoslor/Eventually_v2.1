@@ -55,8 +55,8 @@ public class CreacionGrupo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Ejecutar_Llenado_Grupo("https://eventually02.000webhostapp.com/registrar_grupo.php");
-                //Ejecutar_Llenado_Grupo("http://192.168.1.66/Eventually_01/Registrar_Grupo.php");
+                //Ejecutar_Llenado_Grupo("https://eventually02.000webhostapp.com/registrar_grupo.php");
+                Ejecutar_Llenado_Grupo("http://192.168.1.67/Eventually_01/Registrar_Grupo.php");
                 //Ejecutar_Llenado_Grupo("http://192.168.1.65/Eventually_01/Registrar_Grupo.php");
                 //Ejecutar_Llenado_Grupo("http://192.168.1.56/Eventually_01/Registrar_Grupo.php");
 
@@ -95,6 +95,7 @@ public class CreacionGrupo extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Algo ha salido mal :c " + error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
+
 
             //Generamos el metodo Getparams para definir los parametros que enviaremos a el servidor para lo que haremos uso de un objeto Math.
             @Override

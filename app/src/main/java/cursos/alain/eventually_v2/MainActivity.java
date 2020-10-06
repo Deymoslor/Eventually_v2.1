@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
                 //Evaluamos si algúno de los campos de el login están vacíos.
                 if (!E_Mail.isEmpty() || !Contraseña.isEmpty()){
-                    validarCliente("https://eventually02.000webhostapp.com/validar_usuario.php");
-                    //validarCliente("http://192.168.1.67/Eventually_01/Validar_Usuario.php");
+                    //validarCliente("https://eventually02.000webhostapp.com/validar_usuario.php");
+                    validarCliente("http://192.168.1.67/Eventually_01/Validar_Usuario.php");
                     //validarCliente("http://192.168.1.65/Eventually_01/Validar_Usuario.php");
                     //validarCliente("http://192.168.1.56/Eventually_01/Validar_Usuario.php");
 
