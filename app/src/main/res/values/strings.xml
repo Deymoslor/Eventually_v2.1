@@ -72,6 +72,9 @@
     <string name="participantes">Participantes</string>
     <string name="eventos">Eventos</string>
     <string name="title_activity_contenedor_instrucciones">ContenedorInstruccionesActivity</string>
+    <string name="unirse">unirse</string>
+    <string name="crear_evennto">Crear evento</string>
+    <string name="volver_al_grupo">Volver al Grupo</string>
 
 
 </resources>

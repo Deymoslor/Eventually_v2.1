@@ -34,8 +34,8 @@
     </item>
 
     <item
-        android:title="Administrador">
-        <menu>
+        android:title="Cerrar sesion">
+        <!--<menu>
             <item
                 android:id="@+id/Desarollo"
                 android:icon="@drawable/ic_home"
@@ -46,8 +46,15 @@
                 android:icon="@drawable/ic_group"
                 android:title="Registros">
             </item>
-        </menu>
+        </menu>-->
 
+        <menu>
+            <item
+                android:id="@+id/Salir"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
+                android:title="@string/Cerrar_Sesion">
+            </item>
+        </menu>
     </item>
 
 </menu>

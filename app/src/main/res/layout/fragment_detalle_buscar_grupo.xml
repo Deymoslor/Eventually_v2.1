@@ -17,6 +17,12 @@
         android:textAlignment="center"
         android:layout_gravity="center|top">
     </TextView>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+    </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerdetalleGrupos"

@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +57,8 @@ public class DetalleBuscarGrupoFragment extends Fragment implements Response.Lis
 
     TextView TextEtiqueta;
 
+    Button btnUnirse;
+
     RequestQueue requestQueue; //Definimos este request aquí ya que varios metodos harán uso del mismo objeto.
 
 
@@ -63,6 +66,9 @@ public class DetalleBuscarGrupoFragment extends Fragment implements Response.Lis
 
     RecyclerView recyclerGrupos;
     ArrayList<Grupos1> listaGrupos2;
+
+    Activity activity;
+    iComunicaFragments interfaceComunicaFragments;
 
     ProgressDialog progress;
 
@@ -118,6 +124,7 @@ public class DetalleBuscarGrupoFragment extends Fragment implements Response.Lis
 
 
 
+
         Bundle objetoEtiqueta = getArguments();
         Buscar_Grupos buscar_grupos = null;
 
@@ -138,7 +145,7 @@ public class DetalleBuscarGrupoFragment extends Fragment implements Response.Lis
     }
 
     private void cargarWebservice() {
-            progress = new ProgressDialog(getContext());
+        progress = new ProgressDialog(getContext());
         progress.setMessage("Consultando...");
         progress.show();
 
@@ -178,11 +185,19 @@ public class DetalleBuscarGrupoFragment extends Fragment implements Response.Lis
                 grupos1.setNombre_Grupo(jsonObject.optString("Nombre_Grupo"));
                 grupos1.setEtiqueta(jsonObject.optString("Etiquetas"));
                 grupos1.setDescripcion(jsonObject.optString("Descripcion_Grupo"));
+                grupos1.setIdGrupo(jsonObject.optString("Id_Grupo"));
                 listaGrupos2.add(grupos1);
             }
             progress.hide();
             BuscarGruposDetalleAdapter adapter = new BuscarGruposDetalleAdapter(listaGrupos2);
             recyclerGrupos.setAdapter(adapter);
+            adapter.setOnclickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    interfaceComunicaFragments.enviarDetalleGruposBuscarGrupos(listaGrupos2.get(recyclerGrupos.getChildAdapterPosition(v)));
+                }
+            });
 
 
 
@@ -198,6 +213,10 @@ public class DetalleBuscarGrupoFragment extends Fragment implements Response.Lis
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
 
+        if (context instanceof Activity){
+            this.activity = (Activity) context;
+            interfaceComunicaFragments = (iComunicaFragments) this.activity;
+        }
     }
 
     @Override

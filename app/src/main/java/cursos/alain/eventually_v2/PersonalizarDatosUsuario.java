@@ -155,7 +155,5 @@ public class PersonalizarDatosUsuario extends AppCompatActivity {
 
         IdActualizar =preferences.getString("idok", "");
 
-
-
     }
 }

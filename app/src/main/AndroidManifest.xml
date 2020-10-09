@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ContenedorInstruccionesActivity"></activity>
+        <activity android:name=".VerEventoActivity"></activity>
+        <activity android:name=".EventoActivity" />
+        <activity android:name=".ContenedorInstruccionesActivity" />
         <activity
             android:name=".CreacionGrupo"
             android:screenOrientation="portrait" />

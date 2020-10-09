@@ -7,6 +7,7 @@ public class Grupos1 implements Serializable {
     private String Nombre_Grupo;
     private String Etiqueta;
     private String Descripcion;
+    private String IdGrupo;
 
     public String getNombre_Grupo() {
         return Nombre_Grupo;
@@ -30,5 +31,13 @@ public class Grupos1 implements Serializable {
 
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
+    }
+
+    public String getIdGrupo() {
+        return IdGrupo;
+    }
+
+    public void setIdGrupo(String idGrupo) {
+        IdGrupo = idGrupo;
     }
 }
