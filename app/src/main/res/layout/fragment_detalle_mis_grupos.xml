@@ -9,11 +9,20 @@
 
    <ScrollView
        android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
+       android:layout_height="wrap_content"
+       android:layout_gravity="center">
        <LinearLayout
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:orientation="vertical">
+           android:orientation="vertical"
+           android:layout_gravity="center">
+           <TextView
+               android:id="@+id/textIdGrupoDetalleMisgrupos2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="right"
+               android:text="15">
+           </TextView>
            <TextView
                android:id="@+id/MisGrupos_nombreGrupo"
                android:layout_marginTop="20dp"
@@ -37,25 +46,57 @@
                android:textStyle="italic">
            </TextView>
            <LinearLayout
-               android:layout_marginTop="20dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:orientation="horizontal"
+               android:layout_gravity="center">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:text="Administrador del grupo: "
+                   android:visibility="invisible"></TextView>
+
+               <TextView
+                   android:id="@+id/IdUsuarioAdmin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:text="23 "
+                   android:visibility="invisible"></TextView>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_marginTop="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
                android:layout_gravity="center">
                <Button
                    android:id="@+id/MisGrupos_btnEvento"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginRight="20dp"
+                   android:layout_gravity="left"
+                   android:text="@string/crear_evennto"
+                   android:textSize="13sp"
+                   android:textStyle="bold">
+               </Button>
+               <Button
+                   android:id="@+id/MisGrupos_btnVerEvento"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
                    android:text="@string/eventos"
+                   android:textSize="13sp"
                    android:textStyle="bold">
                </Button>
                <Button
                    android:id="@+id/MisGrupos_btnParticipantes"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginLeft="20dp"
-                   android:text="@string/participantes">
+                   android:layout_gravity="right"
+                   android:text="@string/participantes"
+                   android:textSize="13sp">
                </Button>
            </LinearLayout>
            <TextView

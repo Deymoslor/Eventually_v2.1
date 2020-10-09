@@ -41,7 +41,7 @@ public class GruposAdapter extends RecyclerView.Adapter<GruposAdapter.GruposHold
         holder.TxtNombre_Grupo.setText(listaGrupos.get(position).getNombre_Grupo().toString());
         holder.TxtEtiqueta.setText(listaGrupos.get(position).getEtiqueta().toString());
         holder.TxtDescripcion.setText(listaGrupos.get(position).getDescripcion().toString());
-
+        holder.TxtIdGrupo.setText(listaGrupos.get(position).getIdGrupo().toString());
     }
 
     @Override
@@ -66,10 +66,11 @@ public class GruposAdapter extends RecyclerView.Adapter<GruposAdapter.GruposHold
 
     public class GruposHolder extends RecyclerView.ViewHolder {
 
-        TextView TxtNombre_Grupo,TxtEtiqueta,TxtDescripcion;
+        TextView TxtNombre_Grupo,TxtEtiqueta,TxtDescripcion,TxtIdGrupo;
 
         public GruposHolder(@NonNull View itemView) {
             super(itemView);
+            TxtIdGrupo = (TextView) itemView.findViewById(R.id.textIdGrupoMisGrupos);
             TxtNombre_Grupo = (TextView) itemView.findViewById(R.id.Txt_Nombre_Grupo);
             TxtEtiqueta = (TextView) itemView.findViewById(R.id.Txt_Etiqueta);
             TxtDescripcion = (TextView) itemView.findViewById(R.id.Txt_Descripcion);

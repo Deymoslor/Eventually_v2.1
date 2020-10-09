@@ -16,4 +16,6 @@ public interface iComunicaFragments {
     public void enviarEtiqueta(Buscar_Grupos buscar_grupos);
 
     public void enviarGrupos1(Grupos1 grupos1);
+
+    public void enviarDetalleGruposBuscarGrupos(Grupos1 grupos1);
 }

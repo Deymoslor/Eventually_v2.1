@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +44,7 @@ public class BuscarGruposDetalleAdapter extends RecyclerView.Adapter<BuscarGrupo
         holder.TxtNombre_Grupo.setText(listaGrupos2.get(position).getNombre_Grupo().toString());
         holder.TxtEtiqueta.setText(listaGrupos2.get(position).getEtiqueta().toString());
         holder.TxtDescripcion.setText(listaGrupos2.get(position).getDescripcion().toString());
+        holder.TxtIdGrupo.setText(listaGrupos2.get(position).getIdGrupo().toString());
 
     }
 
@@ -67,13 +70,14 @@ public class BuscarGruposDetalleAdapter extends RecyclerView.Adapter<BuscarGrupo
 
     public class BuscarGruposAdapterHolder extends RecyclerView.ViewHolder {
 
-        TextView TxtNombre_Grupo,TxtEtiqueta,TxtDescripcion;
+        TextView TxtNombre_Grupo,TxtEtiqueta,TxtDescripcion,TxtIdGrupo;
 
         public BuscarGruposAdapterHolder(@NonNull View itemView) {
             super(itemView);
             TxtNombre_Grupo = (TextView) itemView.findViewById(R.id.Txt_Nombre_Grupo);
             TxtEtiqueta = (TextView) itemView.findViewById(R.id.Txt_Etiqueta);
             TxtDescripcion = (TextView) itemView.findViewById(R.id.Txt_Descripcion);
+            TxtIdGrupo = (TextView) itemView.findViewById(R.id.textIdGrupo);
         }
     }
 }

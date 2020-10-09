@@ -8,16 +8,25 @@
     android:layout_weight="1"
     android:background="@drawable/fondoxd"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <ImageView
+        <ImageView
         android:id="@+id/imagen_detalle"
         android:layout_width="260dp"
         android:layout_height="260dp"
         android:layout_weight="3"
         android:src="@mipmap/logoxd_foreground"
         android:layout_gravity="center"
-        android:paddingTop="10dp">
-    </ImageView>
+        android:paddingTop="10dp"
+            android:layout_marginTop="13dp"
+        android:layout_marginBottom="30dp">
+        </ImageView>
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +48,8 @@
         android:layout_weight="3"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp">
 
         <EditText
             android:id="@+id/Txt_Email_L"
@@ -79,7 +89,8 @@
         android:text="@string/Ingresar"
         android:textAlignment="center"
         android:textColor="@color/colorAzul_Sutil"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
 
     <LinearLayout
 
@@ -88,7 +99,8 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp">
 
         <TextView
             android:id="@+id/textView4"
@@ -116,5 +128,8 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

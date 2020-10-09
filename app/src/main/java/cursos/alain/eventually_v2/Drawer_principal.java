@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -17,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.navigation.NavigationView;
 
 import cursos.alain.eventually_v2.Fragments.DetalleBuscarGrupoFragment;
+import cursos.alain.eventually_v2.Fragments.DetalleGruposBuscarGruposFragment;
 import cursos.alain.eventually_v2.Fragments.DetalleMisGrupos;
 import cursos.alain.eventually_v2.Fragments.FragmentAdmin;
 import cursos.alain.eventually_v2.Fragments.FragmentBuscarGrupos;
@@ -40,11 +43,12 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
     //variables para cargar el fragment principal
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    DetalleGruposBuscarGruposFragment detalleGruposBuscarGruposFragment;
 
     //Variable del fragmentdetalle Grupo
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_principal);
         toolbar = findViewById(R.id.toolbar);
@@ -64,6 +68,8 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container, new InicioFragment());
         fragmentTransaction.commit();
+
+        //getSupportFragmentManager().beginTransaction().replace(R.id.drawer,detalleBuscarGrupoFragment).commit();
     }
 
 
@@ -84,12 +90,20 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
             fragmentTransaction.replace(R.id.container, new MisGruposFragment());
             fragmentTransaction.commit();
         }
-        if(menuItem.getItemId() == R.id.registros) {
+        if(menuItem.getItemId() == R.id.Salir) {
+            SharedPreferences preferences = getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
+            preferences.edit().clear().commit(); //Limpiamos las preferencias mediante este método.
+
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        /*if(menuItem.getItemId() == R.id.registros) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container, new FragmentAdmin());
             fragmentTransaction.commit();
-        }
+        }*/
         if(menuItem.getItemId() == R.id.personalizarCuenta) {
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
@@ -163,5 +177,15 @@ public class Drawer_principal extends AppCompatActivity implements NavigationVie
                 beginTransaction().
                 replace(R.id.container, detalleMisGrupos).addToBackStack(null).commit();
 
+    }
+
+    @Override
+    public void enviarDetalleGruposBuscarGrupos(Grupos1 grupos1) {
+        detalleGruposBuscarGruposFragment = new DetalleGruposBuscarGruposFragment();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto",grupos1);
+        detalleGruposBuscarGruposFragment.setArguments(bundleEnvio);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,detalleGruposBuscarGruposFragment).addToBackStack(null).commit();
     }
 }

@@ -119,8 +119,8 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
         View vista = inflater.inflate(R.layout.fragment_mis_grupos,container,false);
         fab = vista.findViewById(R.id.fab_CrearGrupo);
         recuperarId();
-        iComunicaFragments interfaceComunicaFragments;
         Log.d(Idok, "onCreateView: ");
+        iComunicaFragments interfaceComunicaFragments;
         listaGrupos = new ArrayList<>();
 
         recyclerGrupos = (RecyclerView) vista.findViewById(R.id.idRecycler);
@@ -221,7 +221,6 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
             Map<String,String> parametros=new HashMap<String, String>();
 
             //Meidante el método put, definimos los datos que vamos a enviar.
-            parametros.put("idok",IdActualizar);
 
             Log.d(String.valueOf(parametros), "recuperarId: ");
 
@@ -261,6 +260,7 @@ public class MisGruposFragment extends Fragment implements Response.Listener<JSO
                 grupos1.setNombre_Grupo(jsonObject.optString("Nombre_Grupo"));
                 grupos1.setEtiqueta(jsonObject.optString("Etiquetas"));
                 grupos1.setDescripcion(jsonObject.optString("Descripcion_Grupo"));
+                grupos1.setIdGrupo(jsonObject.optString("Id_Grupo"));
                 listaGrupos.add(grupos1);
             }
             progress.hide();

@@ -28,6 +28,12 @@
             android:textStyle="bold"
             android:layout_weight=".8">
         </TextView>
+        <TextView
+            android:id="@+id/textIdGrupoMisGrupos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15">
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
