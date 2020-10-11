@@ -83,7 +83,7 @@
         android:layout_weight="1"
         android:layout_below="@+id/textView"
         android:layout_gravity="center"
-        android:backgroundTint="@color/colorBoton_Prueba1"
+        android:backgroundTint="@color/colorBotones"
         android:fontFamily="@font/amiko"
 
         android:text="@string/Ingresar"
@@ -110,7 +110,7 @@
             android:layout_gravity="left"
             android:onClick="Recuperar"
             android:text="@string/Olvidacion"
-            android:textColor="@color/colorAzul_Sutilmenos1"
+            android:textColor="@color/colorAzul_oscuro"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -123,7 +123,7 @@
             android:gravity="right"
             android:onClick="Registro"
             android:text="@string/Registrarse"
-            android:textColor="@color/colorAzul_Sutilmenos1"
+            android:textColor="@color/colorAzul_oscuro"
             android:textSize="14sp"
             android:textStyle="bold" />
 

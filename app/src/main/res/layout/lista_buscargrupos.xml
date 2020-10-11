@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/etiquetas"
+            android:textColor="@color/colorAzul_Sutil"
             android:textSize="45sp"
             android:textStyle="bold"
             android:layout_gravity="center"
@@ -27,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorAzul_TQM">
     </TextView>
 
 </LinearLayout>

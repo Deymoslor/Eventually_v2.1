@@ -28,7 +28,7 @@
             android:gravity="center"
             android:fontFamily="@font/amiko"
             android:text="@string/Registro"
-            android:textColor="@color/colorAzul_Sutilmenos2"
+            android:textColor="@color/colorAzul_TQM"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:backgroundTint="@color/colorBoton_Prueba1"
+                android:backgroundTint="@color/colorBotones"
                 android:text="@string/CRegistro"
                 android:textColor="@color/colorAzul_Sutil" />
 
@@ -121,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:backgroundTint="@color/colorBoton_Prueba1"
+                android:backgroundTint="@color/colorBotones"
                 android:text="@string/volver"
                 android:textColor="@color/colorAzul_Sutil"
                 android:onClick="Login"/>

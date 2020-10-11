@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.MisGruposFragment">
+    tools:context=".Fragments.MisGruposFragment"
+    android:background="@drawable/fondoxd">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="55dp"
@@ -19,7 +20,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         app:fabSize="normal"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorBotones"
         android:elevation="6dp"
         android:src="@drawable/ic_creargrupo">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>

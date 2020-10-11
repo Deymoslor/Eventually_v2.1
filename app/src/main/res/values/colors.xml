@@ -7,6 +7,9 @@
     <color name="colorNegro">#000000</color>
     <color name="colorAzul_Sutil">#C4E2E6</color>
     <color name="colorAzul_Sutilmenos1">#92CFD7</color>
+    <color name="colorAzul_oscuro">#22475C</color>
+    <color name="colorBotones">#185F82</color>
+    <color name="colorAzul_TQM">#598BA8</color>
     <color name="colorAzul_Sutilmenos2">#62B0BB</color>
     <color name="colorBoton_Prueba1">#2BC2D6</color>
     <color name="colorPrimary_tab">#F44336</color>
