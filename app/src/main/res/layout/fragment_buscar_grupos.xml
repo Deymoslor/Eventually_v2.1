@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.MisGruposFragment">
-
+    tools:context=".Fragments.MisGruposFragment"
+    android:background="@drawable/fondoxd">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="55dp"
         android:id="@+id/idRecycler"

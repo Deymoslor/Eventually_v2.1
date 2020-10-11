@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragments.DetalleBuscarGrupoFragment">
+    tools:context=".Fragments.DetalleBuscarGrupoFragment"
+    android:background="@drawable/fondoxd">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

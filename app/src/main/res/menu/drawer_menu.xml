@@ -6,12 +6,12 @@
             <item
                 android:id="@+id/home"
                 android:icon="@drawable/ic_home"
-                android:title="home">
+                android:title="Home">
             </item>
             <item
                 android:id="@+id/grupos"
                 android:icon="@drawable/ic_group"
-                android:title="@string/mis_grupos">
+                android:title="Mís grupos">
             </item>
             <item
                 android:id="@+id/Buscargrupos"

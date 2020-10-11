@@ -3,11 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondoxd">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="38dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -18,11 +20,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
         android:layout_gravity="center"
+        android:textColor="@color/colorAzul_TQM"
         android:layout_marginTop="50dp"
         android:text="@string/personaliza_tu_cuenta"
         android:textSize="30sp">
     </TextView>
     <LinearLayout
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -33,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColorHint="@color/colorAzul_Sutil"
             android:hint="@string/documento"
             android:textSize="25sp">
         </EditText>
@@ -46,6 +51,7 @@
                 android:id="@+id/Txt_Nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:hint="@string/Nombre"
                 android:textSize="25sp">
             </EditText>
@@ -53,6 +59,7 @@
                 android:id="@+id/Txt_Apellido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:hint="@string/apellido"
                 android:textSize="25sp">
             </EditText>
@@ -67,6 +74,7 @@
                 android:id="@+id/Txt_Fecha_Nacimiento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:hint="@string/fecha_de_nacimiento"
                 android:textSize="25sp"
                 android:focusable="false">
@@ -75,30 +83,20 @@
                 android:id="@+id/Txt_Celular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:hint="Celular"
                 android:textSize="25sp"
                 android:inputType="phone">
             </EditText>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Foto: "
-            android:textSize="20sp">
-        </TextView>
-        <ImageView
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:layout_gravity="center"
-            android:src="@drawable/maestro">
-        </ImageView>
         <Button
             android:id="@+id/Btn_Editar"
+            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorBotones"
             android:layout_gravity="center"
             android:text="@string/editar"
             android:textSize="20sp">

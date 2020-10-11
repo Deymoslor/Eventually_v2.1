@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondoxd">
 
 
     <ScrollView
@@ -21,6 +22,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:text="@string/personaliza_tu_cuenta"
+        android:textColor="@color/colorAzul_TQM"
         android:textSize="30sp">
     </TextView>
     <LinearLayout
@@ -39,12 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Nombre 1"
+            android:textColorHint="@color/colorAzul_Sutil"
             android:textSize="25sp">
         </EditText>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Nombre 2"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp">
             </EditText>
         </LinearLayout>
@@ -58,12 +62,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Apellido 1"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp">
             </EditText>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Apellido 2"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp">
             </EditText>
         </LinearLayout>
@@ -77,6 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Edad"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp"
                 android:inputType="number">
             </EditText>
@@ -84,6 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Celular"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp"
                 android:inputType="phone">
             </EditText>
@@ -99,40 +107,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Etiqueta 1"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp">
             </EditText>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Etiqueta 2"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp">
             </EditText>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Etiqueta 3"
+                android:textColorHint="@color/colorAzul_Sutil"
                 android:textSize="25sp">
             </EditText>
 
         </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Foto: "
-            android:textSize="20sp">
-        </TextView>
-        <ImageView
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:layout_gravity="center"
-            android:src="@drawable/maestro">
-        </ImageView>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:backgroundTint="@color/colorBotones"
             android:text="@string/editar"
             android:textSize="20sp">
         </Button>

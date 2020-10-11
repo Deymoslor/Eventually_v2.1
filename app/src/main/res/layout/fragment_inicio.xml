@@ -17,7 +17,7 @@
             android:id="@+id/avatarImage"
             android:layout_width="match_parent"
             android:layout_height="176dp"
-            android:src="@drawable/maestro">
+            android:src="@drawable/eventuallylogos">
         </ImageView>
 
         <TextView
@@ -25,9 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/avatarImage"
-            android:text="@string/maestro"
+            android:text="BIENVENIDOS"
             android:textAlignment="center"
-            android:textColor="#B2CEDE"
+            android:textColor="@color/colorAzul_oscuro"
             android:textSize="30sp"
             android:textStyle="bold">
         </TextView>
@@ -73,7 +73,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Mis grupos"
                         android:textAlignment="center"
-                        android:textColor="@color/colorvioleta"
+                        android:textColor="@color/colorAzul_TQM"
                         android:textSize="16sp"
                         android:textStyle="bold">
                     </TextView>
@@ -117,7 +117,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Buscar grupos"
                         android:textAlignment="center"
-                        android:textColor="@color/colorvioleta"
+                        android:textColor="@color/colorAzul_TQM"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
@@ -160,7 +160,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Perfil"
                         android:textAlignment="center"
-                        android:textColor="@color/colorvioleta"
+                        android:textColor="@color/colorAzul_TQM"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
@@ -202,7 +202,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Configuración"
                         android:textAlignment="center"
-                        android:textColor="@color/colorvioleta"
+                        android:textColor="@color/colorAzul_TQM"
                         android:textSize="16sp"
                         android:textStyle="bold">
 
@@ -244,7 +244,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Información"
                         android:textAlignment="center"
-                        android:textColor="@color/colorvioleta"
+                        android:textColor="@color/colorAzul_TQM"
                         android:textSize="16sp"
                         android:textStyle="bold">
 

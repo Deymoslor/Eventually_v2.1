@@ -25,6 +25,7 @@
         android:layout_gravity="center"
         android:onClick="cerrar"
         android:text="@string/volver_al_grupo"
+        android:backgroundTint="@color/colorBotones"
         android:textSize="15sp">
     </Button>
 </LinearLayout>

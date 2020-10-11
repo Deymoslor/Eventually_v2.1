@@ -18,7 +18,7 @@
         android:fontFamily="@font/amiko"
         android:text="@string/Recuperar"
         android:textAlignment="center"
-        android:textColor="@color/colorAzul_Sutilmenos2"
+        android:textColor="@color/colorAzul_TQM"
         android:textSize="30sp"
         android:textStyle="bold" />
     <TextView
@@ -29,7 +29,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/RecuperarC"
-        android:textColor="@color/colorAzul_Sutilmenos1"
+        android:textColor="@color/colorAzul_oscuro"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:layout_gravity="center"
-        android:backgroundTint="@color/colorBoton_Prueba1"
+        android:backgroundTint="@color/colorBotones"
         android:onClick="Enviar"
         android:text="@string/RecuperarE"
         android:textColor="@color/colorAzul_Sutil"
